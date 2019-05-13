@@ -51,7 +51,7 @@
                   <select name="nik_siswa" class="form-control">
                     <option disable selected="">Pilih Siswa</option>
                     <?php foreach($siswa as $siswa) : ?>
-                      <option value="<?=$siswa->nik;?>"><?=$siswa->nama;?></option>
+                      <option value="<?=$siswa->nis;?>"><?=$siswa->nama;?></option>
                     <?php endforeach;?>
                   </select>
                 </div>
@@ -75,7 +75,7 @@
                   <select name="mapel" class="form-control">
                     <option disabled selected="">Pilih Mapel</option>
                     <?php foreach($mapel as $mapel) : ?>
-                      <option value="<?=$mapel->kode_mapel;?>"><?=$mapel->nama_mapel;?></option>
+                      <option value="<?=$mapel->id;?>"><?=$mapel->nama_mapel;?></option>
                     <?php endforeach;?>
                   </select>
                 </div>

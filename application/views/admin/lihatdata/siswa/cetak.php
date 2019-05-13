@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <title>Rekap Data Guru</title>
+    <link href="<?php echo base_url('assets/blue/css/bootstrap.min.css');?>" rel="stylesheet" />
     <style type="text/css">
         h1 {
             text-align:center;
@@ -18,6 +19,7 @@
         }
         th, td {
             padding: 4px 2px;
+            padding-right: 150px;
         }
         th, tfoot tr td {
             background-color: #999999;
@@ -26,12 +28,13 @@
 </head>
 
 <body>
+
     <h1>Rekap Data Siswa</h1>
 
     <?php $i = 0 ?>
-    <table width="600" border="0">
-        <thead>
-            <tr>
+    <table class="datatables table table-bordered table-striped" id="datatable-editable" >
+        <thead >
+            <tr >
                 <th style="padding-right: 20px;">No</th>
                 <th style="padding-right: 20px;">Nama</th>
                 <th style="padding-right: 20px;">NIS</th>
@@ -48,10 +51,10 @@
                 <td style="padding-right: 20px;" width="30"><?= ++$i ?></td>
                 <td style="padding-right: 20px;"><?= $sw->nama; ?>
                 </td>
-                <td style="padding-right: 20px;"><?= $sw->nik; ?></td>
-                <td style="padding-right: 20px;"><?= $sw->nama_ruangan; ?></td>
+                <td style="padding-right: 20px;text-align:center;"><?= $sw->nis; ?></td>
+                <td style="padding-right: 20px;text-align:center;"><?= $sw->nama_ruangan; ?></td>
                 <td style="padding-right: 20px;"><?= $sw->ttl; ?></td>
-                <td style="padding-right: 20px;"><?= $sw->jk; ?></td>
+                <td style="padding-right: 20px;text-align:center;"><?= $sw->jk; ?></td>
                 <td style="padding-right: 20px;"><?= $sw->nope; ?></td>
                 <td style="padding-right: 20px;"><?= $sw->alamat; ?></td>
             </tr>

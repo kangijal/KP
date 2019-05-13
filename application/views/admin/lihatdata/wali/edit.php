@@ -52,7 +52,7 @@
                                 ?>
 
 
-                                <div class="panel-heading"><h3 class="panel-title">Edit Data Wali Murid</h3></div>
+                                <div class="panel-heading"><h3 class="panel-title">Edit Data Wali Kelas</h3></div>
                                 <div class="panel-body">
                                 <form action="<?php echo site_url('admin/lihatdata/updatewali/'.$wali->id);?>" method="POST" class="form-horizontal" role="form">                                    
                                         <div class="form-group">

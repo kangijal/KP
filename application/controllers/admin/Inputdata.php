@@ -43,7 +43,7 @@ class Inputdata extends CI_Controller
 		{
 			$namaphoto = $this->upload->data('file_name');
 
-			
+			$data['id'] = $this->input->post('nip',true);
 			$data['nip'] = $this->input->post('nip',true);
 			$data['nama'] = $this->input->post('nama',true);
 			$nama = $this->input->post('nama',true);
@@ -66,7 +66,7 @@ class Inputdata extends CI_Controller
 			$data2['nama'] = $this->input->post('nama',true);
 			$data2['username'] = $this->input->post('nip',true);
 			$data2['password'] = md5($ttl2);
-			$data2['level'] = '2';
+			$data2['level'] = 'Guru';
 			$data2['photo'] = $namaphoto;
 
 			$this->db->insert('user',$data2);

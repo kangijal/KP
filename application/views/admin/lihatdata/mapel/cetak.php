@@ -44,7 +44,7 @@
                 <tr class="gradeX">
                     <td><?= $nomor;?> </td>
                     <?php $nomor++;?>
-                    <td><?= $sw->kode_mapel; ?>
+                    <td><?= $sw->id; ?>
                     </td>
                     <td><?= $sw->nama_mapel; ?></td>
                     

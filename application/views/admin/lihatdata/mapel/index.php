@@ -71,14 +71,14 @@
                                                 <tr class="gradeX">
                                                     <td><?= $nomor;?> </td>
                                                     <?php $nomor++;?>
-                                                    <td><?= $sw->kode_mapel; ?>
+                                                    <td><?= $sw->id; ?>
                                                     </td>
                                                     <td><?= $sw->nama_mapel; ?></td>
                                                     <td class="actions">
                                                         <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
                                                         <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                                        <a href="<?= site_url('admin/lihatdata/editmapel/'.$sw->kode_mapel);?>" class="on-default edit-row"><i class="fa fa-pencil" siswa="<?= $sw->kode_mapel;?>"></i></a>
-                                                        <a href="" class="on-default remove-row"><i class="fa fa-trash-o hapus" siswa="<?= $sw->kode_mapel;?>"></i></a>
+                                                        <a href="<?= site_url('admin/lihatdata/editmapel/'.$sw->id);?>" class="on-default edit-row"><i class="fa fa-pencil" siswa="<?= $sw->id;?>"></i></a>
+                                                        <a href="" class="on-default remove-row"><i class="fa fa-trash-o hapus" siswa="<?= $sw->id;?>"></i></a>
                                                     </td>
                                                     
                                                 </tr>

@@ -34,6 +34,7 @@
 
                                 ?>
 
+                                <a href="<?= site_url('admin/akademik/tambahjadwal');?>">tambah jadwal</a>
                                 <div class="panel-heading"><h3 class="panel-title">Cari Jadwal</h3></div>
                                 <div class="panel-body">
                                    

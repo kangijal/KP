@@ -54,11 +54,11 @@
 
                             <div class="panel-heading"><h3 class="panel-title">Edit Data Mata Pelajaran</h3></div>
                             <div class="panel-body">
-                                <form action="<?php echo site_url('admin/lihatdata/updatemapel/'.$mapel->kode_mapel);?>" method="POST" class="form-horizontal" role="form">                                    
+                                <form action="<?php echo site_url('admin/lihatdata/updatemapel/'.$mapel->id);?>" method="POST" class="form-horizontal" role="form">                                    
                                     <div class="form-group">
                                         <label class="col-md-2 control-label">Kode Mata Pelajaran</label>
                                         <div class="col-md-10">
-                                            <input type="text" name="kode_mapel" class="form-control" value="<?= $mapel->kode_mapel;?>">
+                                            <input type="text" name="kode_mapel" class="form-control" value="<?= $mapel->id;?>">
                                         </div>
                                     </div>
                                     <div class="form-group">

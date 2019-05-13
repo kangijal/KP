@@ -42,11 +42,93 @@ class Akademik extends CI_Controller
 
 	public function editjadwal($id)
 	{
-		$data['jadwal'] = $this->db->select('jadwal_pelajaran.*, ruang_kelas.nama_ruangan, mapel.nama_mapel, guru.nama')->from('jadwal_pelajaran')->join('ruang_kelas', 'ruang_kelas.id=jadwal_pelajaran.id_kelas')->join('mapel','mapel.kode_mapel=jadwal_pelajaran.kode_mapel')->join('guru','guru.NIP=jadwal_pelajaran.nip')->where('jadwal_pelajaran.id',$id)->get()->row();
-		$data['kelas'] = $this->db->get('ruang_kelas')->result();
-		$data['mapel'] = $this->db->get('mapel')->result();
+		$data['jadwal'] = $this->db->select("mapel.nama_mapel as nur, mapel.id as fatimah, hari.hari as ratih, jam.waktu as alvri, jadwal_pelajaran.*")
+		->from("jadwal_pelajaran")
+		->join("mapel", "mapel.id=jadwal_pelajaran.id_mapel")
+		->join("hari", "hari.id=jadwal_pelajaran.hari")
+		->join("jam", "jam.id=jadwal_pelajaran.jam")
+		->where("jadwal_pelajaran.id", $id)
+		->get()->result_array();
 
-		$this->load->view('admin/akademik/jadwal/edit',$data);
+		$data['mapel'] = $this->db->select("*")
+		->from("mapel")
+		->get()->result_array();
+
+		$this->load->view('admin/akademik/jadwal/ratih', $data);
+	}
+
+	public function tambahjadwal()
+	{
+		$data['kelas'] = $this->db->select("*")
+		->from("ruang_kelas")
+		->get()->result_array();
+
+		$data['mapel'] = $this->db->select("*")
+		->from("mapel")
+		->get()->result_array();
+
+		$data['hari'] = $this->db->select("*")
+		->from("hari")
+		->get()->result_array();
+
+		$data['jam'] = $this->db->select("*")
+		->from("jam")
+		->get()->result_array();
+
+		$this->load->view('admin/akademik/jadwal/tambah', $data);
+	}
+
+	public function tambahjadwalsimpan()
+	{
+		$method = $_SERVER["REQUEST_METHOD"];
+        if (
+			$method === "POST"
+			&& !empty($this->input->post("kelas")) && is_numeric($this->input->post("kelas")) === TRUE
+			&& !empty($this->input->post("mapel")) && is_numeric($this->input->post("mapel")) === TRUE
+			&& !empty($this->input->post("hari")) && is_numeric($this->input->post("hari")) === TRUE
+			&& !empty($this->input->post("jam")) && is_numeric($this->input->post("jam")) === TRUE
+		) {	
+			$query = $this->db->insert("jadwal_pelajaran",
+            array(
+                "id_kelas" => $this->input->post("kelas"),
+                "id_mapel" => $this->input->post("mapel"),
+                "hari" => $this->input->post("hari"),
+                "jam" => $this->input->post("jam"),
+                "nip" => ""
+            )
+        );
+            
+            if ($query) {
+				redirect('admin/akademik/jadwal');
+			} else {
+				redirect('admin/akademik/editjadwal/'.$id);
+			}
+		} else {
+			echo "made with love ratih";
+		}
+	}
+
+	public function simpanjadwal() {
+		$method = $_SERVER["REQUEST_METHOD"];
+        if (
+			$method === "POST"
+			&& !empty($this->input->post("id")) && is_numeric($this->input->post("id")) === TRUE
+			&& !empty($this->input->post("mapel")) && is_numeric($this->input->post("mapel")) === TRUE
+		) {	
+			$query = $this->db->where("id", $this->input->post("id"))->update("jadwal_pelajaran",
+				array(
+					"id_mapel" => $this->input->post("mapel")
+				)
+        	);
+            
+            if ($query) {
+				redirect('admin/akademik/jadwal');
+			} else {
+				redirect('admin/akademik/editjadwal/'.$id);
+			}
+		} else {
+			echo "made with love ratih";
+		}
 	}
 
 	public function storejadwal()

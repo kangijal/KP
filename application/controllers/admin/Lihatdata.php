@@ -60,21 +60,37 @@ class Lihatdata extends CI_Controller
 
 	public function cetaksiswa()
 	{
+
+
+		ob_start();
 		$data['siswa'] = $this->db->select('siswa.*,ruang_kelas.nama_ruangan')->from('siswa')->join('ruang_kelas','ruang_kelas.id=siswa.id_kelas')->get()->result();
+		$this->load->view('admin/lihatdata/siswa/cetak',$data);
+		$html = ob_get_contents();
+			ob_end_clean();
+			
+			require_once(APPPATH."/third_party/html2pdf_4_03/html2pdf.class.php");
+		$pdf = new HTML2PDF('P','A4','en');
+		$pdf->WriteHTML($html);
+		$pdf->Output('laporan_siswa_'.date('Ymd').'.pdf');
 
-		$html = $this->load->view('admin/lihatdata/siswa/cetak',$data, true);
 
-		require(APPPATH."/third_party/html2pdf_4_03/html2pdf.class.php");
-		try {
-			$html2pdf = new HTML2PDF('P', 'A4', 'en', true, 'UTF-8', array('20', '5', '20', '5'));
-			$html2pdf->WriteHTML($html);
-			$html2pdf->Output('laporan_siswa_'.date('Ymd').'.pdf');
-		} catch (HTML2PDF_exception $e) {
-            // echo $e;
-			$this->session->set_flashdata('berhasil', 'Maaf, kami mengalami kendala teknis.');
-			redirect('admin/lihat_data/siswa');
-		}
-	}
+
+		//$data['siswa'] = $this->db->select('siswa.*,ruang_kelas.nama_ruangan')->from('siswa')->join('ruang_kelas','ruang_kelas.id=siswa.id_kelas')->get()->result();
+		//$this->load->view('admin/lihatdata/siswa/cetak',$data);
+		
+		// $html = $this->load->view('admin/lihatdata/siswa/cAPPPATH."/third_party/html2pdf_4_03/html2pdf.class.php"etak',$data, true);
+
+		// require();
+		// try {
+		// 	$html2pdf = new HTML2PDF('P', 'A4', 'en', true, 'UTF-8', array('20', '5', '20', '5'));
+		// 	$html2pdf->WriteHTML($html);
+		// 	$html2pdf->Output('laporan_siswa_'.date('Ymd').'.pdf');
+		// } catch (HTML2PDF_exception $e) {
+        //     // echo $e;
+		// 	$this->session->set_flashdata('berhasil', 'Maaf, kami mengalami kendala teknis.');
+		// 	redirect('admin/lihat_data/siswa');
+		// }
+	} 
 
 	public function guru()
 	{
@@ -199,7 +215,7 @@ class Lihatdata extends CI_Controller
 
 	public function editmapel($kode_mapel)
 	{
-		$data['mapel'] = $this->db->where('kode_mapel',$kode_mapel)->get('mapel')->row();
+		$data['mapel'] = $this->db->where('id',$kode_mapel)->get('mapel')->row();
 
 		$this->load->view('admin/lihatdata/mapel/edit',$data);
 	}
@@ -243,14 +259,14 @@ class Lihatdata extends CI_Controller
 
 	public function wali()
 	{
-		$data['wali'] = $this->db->select('wali_murid.*, siswa.nama as namasiswa')->from('wali_murid')->join('siswa','siswa.nik = wali_murid.nik')->get()->result();
+		$data['wali'] = $this->db->select('wali_kelas.*, siswa.nama as namasiswa')->from('wali_kelas')->join('siswa','siswa.nik = wali_kelas.nik')->get()->result();
 
 		$this->load->view('admin/lihatdata/wali/index',$data);
 	}
 
 	public function editwali($id)
 	{
-		$data['wali'] = $this->db->where('id',$id)->get('wali_murid')->row();
+		$data['wali'] = $this->db->where('id',$id)->get('wali_kelas')->row();
 		$data['siswa'] = $this->db->get('siswa')->result();
 
 		$this->load->view('admin/lihatdata/wali/edit',$data);
@@ -262,7 +278,7 @@ class Lihatdata extends CI_Controller
 		$data['nik'] = $this->input->post('nik',true);
 		$nama = $this->input->post('nama',true);
 
-		$this->db->where('id',$id)->update('wali_murid',$data);
+		$this->db->where('id',$id)->update('wali_keals',$data);
 
 		$this->session->set_flashdata('berhasil','Wali dengan nama <b>'.$nama.'</b> berhasil di Update');
 		redirect('admin/lihatdata/editwali/'.$id);
@@ -270,7 +286,7 @@ class Lihatdata extends CI_Controller
 
 	public function destroywali($id)
 	{
-		$this->db->where('id',$id)->delete('wali_murid');
+		$this->db->where('id',$id)->delete('wali_kelas');
 
 		redirect('admin/lihatdata/wali');
 	}
