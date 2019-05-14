@@ -24,8 +24,8 @@
         <i class="md md-home"></i> <span>Dashboard</span>
         </a>
       </li>
-
-      <li><a href="<?= site_url('user/pengumuman');?>"><i class="fa fa-pencil"></i> <span>Pengumuman</span></a></li>
+<!-- 
+      <li><a href="<?= site_url('user/pengumuman');?>"><i class="fa fa-pencil"></i> <span>Pengumuman</span></a></li> -->
 
       <li><a href="<?= site_url('user/profil');?>"><i class="fa fa-book"></i> <span>Profil</span></a></li>
 

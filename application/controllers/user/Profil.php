@@ -13,7 +13,7 @@ class Profil extends CI_Controller
 	{
 		$nik = $this->session->userdata('nik');
 
-		$data['profil'] = $this->db->where('nik',$nik)->get('siswa')->row();
+		$data['profil'] = $this->db->where('nis',$nik)->get('siswa')->row();
 
 		$this->load->view('user/profil/index',$data);
 	}

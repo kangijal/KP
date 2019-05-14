@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2019 at 09:36 AM
+-- Generation Time: May 14, 2019 at 08:14 AM
 -- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,6 +41,14 @@ CREATE TABLE `guru` (
   `alamat` varchar(2000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `guru`
+--
+
+INSERT INTO `guru` (`id`, `NIP`, `nama`, `ttl`, `jabatan`, `jk`, `agama`, `warganegara`, `nope`, `alamat`) VALUES
+('', '111122333444', 'Dini', 'Jogja 18-01-1986', 'Guru Bahasa Indonesia', 'L', '', '', '087333552222', 'Sleman'),
+('111122333454', '111122333454', 'Diki', 'Bantul 29-01-1986', 'Guru IPS', 'L', '', '', '098764446333', 'Sleman');
+
 -- --------------------------------------------------------
 
 --
@@ -75,56 +83,59 @@ CREATE TABLE `jadwal_pelajaran` (
   `id_kelas` int(5) NOT NULL,
   `id_mapel` int(5) NOT NULL,
   `hari` int(5) NOT NULL,
-  `jam` int(5) NOT NULL
+  `jam` int(5) NOT NULL,
+  `nip` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `jadwal_pelajaran`
 --
 
-INSERT INTO `jadwal_pelajaran` (`id`, `id_kelas`, `id_mapel`, `hari`, `jam`) VALUES
-(1, 1, 1, 1, 1),
-(2, 1, 1, 1, 2),
-(3, 1, 2, 1, 3),
-(4, 1, 2, 1, 4),
-(5, 1, 3, 1, 5),
-(6, 1, 3, 1, 6),
-(7, 1, 7, 1, 7),
-(8, 1, 5, 2, 1),
-(9, 1, 5, 2, 2),
-(10, 1, 5, 2, 3),
-(11, 1, 5, 2, 4),
-(12, 1, 5, 2, 5),
-(13, 1, 4, 2, 6),
-(14, 1, 4, 2, 7),
-(15, 1, 5, 3, 1),
-(16, 1, 5, 3, 2),
-(17, 1, 5, 3, 3),
-(18, 1, 5, 3, 4),
-(19, 1, 5, 3, 5),
-(20, 1, 4, 3, 6),
-(21, 1, 4, 3, 7),
-(22, 1, 5, 4, 1),
-(23, 1, 5, 4, 2),
-(24, 1, 5, 4, 3),
-(25, 1, 5, 4, 4),
-(26, 1, 5, 4, 5),
-(27, 1, 4, 4, 6),
-(28, 1, 4, 4, 7),
-(29, 1, 5, 5, 1),
-(30, 1, 5, 5, 2),
-(31, 1, 5, 5, 3),
-(32, 1, 5, 5, 4),
-(33, 1, 5, 5, 5),
-(34, 1, 4, 5, 6),
-(35, 1, 4, 5, 7),
-(36, 1, 5, 6, 1),
-(37, 1, 5, 6, 2),
-(38, 1, 5, 6, 3),
-(39, 1, 5, 6, 4),
-(40, 1, 5, 6, 5),
-(41, 1, 4, 6, 6),
-(42, 1, 4, 6, 7);
+INSERT INTO `jadwal_pelajaran` (`id`, `id_kelas`, `id_mapel`, `hari`, `jam`, `nip`) VALUES
+(1, 1, 3, 1, 1, ''),
+(2, 1, 1, 1, 2, ''),
+(3, 1, 2, 1, 3, ''),
+(4, 1, 2, 1, 4, ''),
+(5, 1, 3, 1, 5, ''),
+(6, 1, 3, 1, 6, ''),
+(7, 1, 7, 1, 7, ''),
+(8, 1, 5, 2, 1, ''),
+(9, 1, 5, 2, 2, ''),
+(10, 1, 5, 2, 3, ''),
+(11, 1, 5, 2, 4, ''),
+(12, 1, 5, 2, 5, ''),
+(13, 1, 4, 2, 6, ''),
+(14, 1, 4, 2, 7, ''),
+(15, 1, 5, 3, 1, ''),
+(16, 1, 5, 3, 2, ''),
+(17, 1, 5, 3, 3, ''),
+(18, 1, 5, 3, 4, ''),
+(19, 1, 5, 3, 5, ''),
+(20, 1, 4, 3, 6, ''),
+(21, 1, 4, 3, 7, ''),
+(22, 1, 5, 4, 1, ''),
+(23, 1, 5, 4, 2, ''),
+(24, 1, 5, 4, 3, ''),
+(25, 1, 5, 4, 4, ''),
+(26, 1, 5, 4, 5, ''),
+(27, 1, 4, 4, 6, ''),
+(28, 1, 4, 4, 7, ''),
+(29, 1, 5, 5, 1, ''),
+(30, 1, 5, 5, 2, ''),
+(31, 1, 5, 5, 3, ''),
+(32, 1, 5, 5, 4, ''),
+(33, 1, 5, 5, 5, ''),
+(34, 1, 4, 5, 6, ''),
+(35, 1, 4, 5, 7, ''),
+(36, 1, 5, 6, 1, ''),
+(37, 1, 5, 6, 2, ''),
+(38, 1, 5, 6, 3, ''),
+(39, 1, 5, 6, 4, ''),
+(40, 1, 5, 6, 5, ''),
+(41, 1, 4, 6, 6, ''),
+(42, 1, 4, 6, 7, ''),
+(43, 2, 4, 1, 1, ''),
+(44, 2, 1, 2, 5, '');
 
 -- --------------------------------------------------------
 
@@ -197,7 +208,8 @@ INSERT INTO `mapel` (`id`, `nama_mapel`) VALUES
 (9, 'Pendidikan Jasmani, Olahraga, dan Kesehatan'),
 (10, 'Pendidikan Kewarganegaraan'),
 (11, 'Seni Budaya'),
-(12, 'Seni Tari');
+(12, 'Seni Tari'),
+(13, 'Seni Lukis');
 
 -- --------------------------------------------------------
 
@@ -214,6 +226,21 @@ CREATE TABLE `nilai_siswa` (
   `uts` decimal(10,0) NOT NULL,
   `uas` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `nilai_siswa`
+--
+
+INSERT INTO `nilai_siswa` (`id`, `nis`, `id_kelas`, `id_mapel`, `semester`, `uts`, `uas`) VALUES
+(12345, '12345', 1, 4, 'Ganjil', '77', '67'),
+(112222, '112222', 1, 2, 'Ganjil', '87', '78'),
+(112223, '12345', 1, 8, 'Ganjil', '77', '67'),
+(112224, '12345', 1, 13, 'Ganjil', '77', '88'),
+(112225, '112222', 1, 11, 'Ganjil', '87', '67'),
+(112226, '112222', 1, 11, 'Ganjil', '87', '67'),
+(112227, '112222', 1, 9, 'Ganjil', '65', '65'),
+(112228, '112222', 1, 9, 'Ganjil', '65', '65'),
+(112229, '112222', 1, 1, 'Ganjil', '98', '87');
 
 -- --------------------------------------------------------
 
@@ -274,6 +301,16 @@ CREATE TABLE `siswa` (
   `alamat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `siswa`
+--
+
+INSERT INTO `siswa` (`nis`, `nama`, `jk`, `ttl`, `id_kelas`, `thn_ajaran`, `nope`, `alamat`) VALUES
+('112222', 'Catur', 'L', 'Jogja 30-12-2008', 4, '2019-2020', '0876664644444', 'bantul'),
+('12345', 'Aceng', 'L', 'Jogja 29-01-1986', 1, '2018-2019', '087778899999', 'Jogja'),
+('22331', 'nono', 'L', 'Jogja 02-01-2009', 7, '2019-2020', '976663333332', 'Sleman'),
+('789', 'Poni', 'L', 'Jogja 18-12-2008', 5, '2018-2019', '098766444', 'bantul');
+
 -- --------------------------------------------------------
 
 --
@@ -285,6 +322,16 @@ CREATE TABLE `siswa_has_kelas` (
   `nis` varchar(15) NOT NULL,
   `id_kelas` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `siswa_has_kelas`
+--
+
+INSERT INTO `siswa_has_kelas` (`id`, `nis`, `id_kelas`) VALUES
+(1, '12345', 1),
+(3, '112222', 4),
+(4, '22331', 7),
+(5, '789', 5);
 
 -- --------------------------------------------------------
 
@@ -308,7 +355,14 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `nama`, `username`, `password`, `level`, `photo`) VALUES
 (1, 'Admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', ''),
 (2, 'guru', 'guru', '77e69c137812518e359196bb2f5e9bb9', 'guru', ''),
-(3, 'siswa', 'siswa', 'bcd724d15cde8c47650fda962968f102', 'siswa', '');
+(3, 'siswa', 'siswa', 'bcd724d15cde8c47650fda962968f102', 'siswa', ''),
+(4, 'Aceng', '12345', '431c77df35f31fabacd64014bd13fd7c', 'siswa', '522_Converted.png'),
+(5, 'Nani', '12222', '6a694fd4f9dea2fa4f19ea62568cb30c', 'siswa', '522_Converted1.png'),
+(6, 'Catur', '112222', '6bb00cab07e6495bd5b2b005483dc4bb', 'siswa', 'logo.jpg'),
+(7, 'nono', '22331', '83114db0c3d783f7aee5b40e50f97c80', 'siswa', '14273.jpg'),
+(8, 'Dini', '111122333444', '8c54075c0a435bd6101abd0589bdb8e2', '2', 'Artboard_9@4x.png'),
+(9, 'Diki', '111122333454', '431c77df35f31fabacd64014bd13fd7c', 'Guru', 'dfadfa6.png'),
+(10, 'Poni', '789', '4832b238aae10022505814c7256081c9', 'siswa', 'Panemu1.jpg');
 
 -- --------------------------------------------------------
 
@@ -319,8 +373,17 @@ INSERT INTO `user` (`id`, `nama`, `username`, `password`, `level`, `photo`) VALU
 CREATE TABLE `wali_kelas` (
   `id` int(5) NOT NULL,
   `id_guru` varchar(25) NOT NULL,
-  `id_kelas` int(5) NOT NULL
+  `id_kelas` int(5) NOT NULL,
+  `NIP` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `wali_kelas`
+--
+
+INSERT INTO `wali_kelas` (`id`, `id_guru`, `id_kelas`, `NIP`) VALUES
+(1, '', 1, 2147483647),
+(2, '', 6, 2147483647);
 
 --
 -- Indexes for dumped tables
@@ -348,7 +411,8 @@ ALTER TABLE `jadwal_pelajaran`
   ADD KEY `jadwal_kelas_kelas` (`id_kelas`),
   ADD KEY `id_kelas` (`id_kelas`,`id_mapel`),
   ADD KEY `hari` (`hari`,`jam`),
-  ADD KEY `jam` (`jam`);
+  ADD KEY `jam` (`jam`),
+  ADD KEY `nip` (`nip`);
 
 --
 -- Indexes for table `jam`
@@ -425,7 +489,7 @@ ALTER TABLE `hari`
 -- AUTO_INCREMENT for table `jadwal_pelajaran`
 --
 ALTER TABLE `jadwal_pelajaran`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `jam`
@@ -443,7 +507,13 @@ ALTER TABLE `level`
 -- AUTO_INCREMENT for table `mapel`
 --
 ALTER TABLE `mapel`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `nilai_siswa`
+--
+ALTER TABLE `nilai_siswa`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112230;
 
 --
 -- AUTO_INCREMENT for table `ruang_kelas`
@@ -455,19 +525,19 @@ ALTER TABLE `ruang_kelas`
 -- AUTO_INCREMENT for table `siswa_has_kelas`
 --
 ALTER TABLE `siswa_has_kelas`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `wali_kelas`
 --
 ALTER TABLE `wali_kelas`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -480,7 +550,8 @@ ALTER TABLE `jadwal_pelajaran`
   ADD CONSTRAINT `jadwal_pelajaran_ibfk_1` FOREIGN KEY (`id_mapel`) REFERENCES `mapel` (`id`),
   ADD CONSTRAINT `jadwal_pelajaran_ibfk_2` FOREIGN KEY (`id_kelas`) REFERENCES `ruang_kelas` (`id`),
   ADD CONSTRAINT `jadwal_pelajaran_ibfk_3` FOREIGN KEY (`jam`) REFERENCES `jam` (`id`),
-  ADD CONSTRAINT `jadwal_pelajaran_ibfk_4` FOREIGN KEY (`hari`) REFERENCES `hari` (`id`);
+  ADD CONSTRAINT `jadwal_pelajaran_ibfk_4` FOREIGN KEY (`hari`) REFERENCES `hari` (`id`),
+  ADD CONSTRAINT `jadwal_pelajaran_ibfk_5` FOREIGN KEY (`nip`) REFERENCES `guru` (`id`);
 
 --
 -- Constraints for table `nilai_siswa`

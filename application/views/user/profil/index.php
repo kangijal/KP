@@ -20,7 +20,7 @@
         </h1>
         <ol class="breadcrumb">
 
-          <li><a href="#"><i class="fa fa-dashboard"></i> MTs.Fisabilillah</a></li>
+          <li><a href="#"><i class="fa fa-dashboard"></i>SD 2 Pedes</a></li>
           <li class="active">Profil</li>
         </ol>
       </section>
@@ -47,7 +47,7 @@
 
                 <ul class="list-group list-group-unbordered">
                   <li class="list-group-item">
-                    <b>NIK</b> <a class="pull-right"><?= $profil->nik;?></a>
+                    <b>NIK</b> <a class="pull-right"><?= $profil->nis;?></a>
                   </li>
                   <li class="list-group-item">
                     <b>Tahun Ajaran</b> <a class="pull-right"><?= $profil->thn_ajaran;?></a>

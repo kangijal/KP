@@ -85,7 +85,7 @@ class Inputdata extends CI_Controller
 	public function storemapel()
 	{
 		
-		$data['kode_mapel'] = $this->input->post('kode_mapel',true);
+		$data['id'] = $this->input->post('id',true);
 		$data['nama_mapel'] = $this->input->post('nama_mapel',true);
 		$nama = $this->input->post('nama_mapel',true);
 

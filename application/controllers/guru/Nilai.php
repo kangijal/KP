@@ -27,8 +27,8 @@ class Nilai extends CI_Controller
 			$cek = $this->db->where('id',$id)->get('jadwal_pelajaran')->result();
 			$cek_id = count($cek);
 		}while($cek_id > 0);
-
-		$data['id'] = $id;
+		$data['id'] = $this->input->post('id',true);
+		// $data['id'] = $id;
 		$data['nis'] = $this->input->post('nik_siswa',true);
 		$data['id_kelas'] = $this->input->post('id_kelas',true);
 		$data['id_mapel'] = $this->input->post('mapel',true);

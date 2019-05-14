@@ -18,13 +18,13 @@
     <div id="sidebar-menu" >
     <ul>
 
-      <li>
+      <!-- <li>
         <a href="<?= site_url('user/dashboard');?>">
         <i class="fa fa-th"></i> <span>Dashboard</span>
         </a>
       </li>
 
-      <li><a href="<?= site_url('guru/pengumuman');?>"><i class="fa fa-pencil"></i> <span>Pengumuman</span></a></li>
+      <li><a href="<?= site_url('guru/pengumuman');?>"><i class="fa fa-pencil"></i> <span>Pengumuman</span></a></li> -->
 
       <li class="has_sub">
         <ul class="list-unstyled">

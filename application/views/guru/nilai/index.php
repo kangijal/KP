@@ -12,10 +12,12 @@
     
     <?php $this->load->view('guru/layouts/sidebar');?>
 
+
+
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <!-- <div class="content-wrapper"> -->
       <!-- Content Header (Page header) -->
-      <section class="content-header">
+      <!-- <section class="content-header"> -->
         <h1>PROFIL
         </h1>
         <ol class="breadcrumb">
@@ -54,11 +56,8 @@
               <th>Kelas</th>
               <th>Mata Pelajaran</th>
               <th>Semester</th>
-              <th>Tahun Ajaran</th>
-              <th>Tugas</th>
               <th>UTS</th>
               <th>UAS</th>
-              <th>Rata-Rata</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -69,11 +68,8 @@
                 <td><?= $nilai->nama_ruangan;?></td>
                 <td><?= $nilai->nama_mapel;?></td>
                 <td><?= $nilai->semester;?></td>
-                <td><?= $nilai->thn_ajaran;?></td>
-                <td><?= $nilai->tugas;?></td>
                 <td><?= $nilai->uts;?></td>
                 <td><?= $nilai->uas;?></td>
-                <td><?= $nilai->rata;?></td>
                 <td>
                   <a class="pull-left" href="">Edit</a>
                   <a class="pull-right" href="<?=site_url('guru/nilai/destroy/'.$nilai->id);?>">Delete</a>
