@@ -92,22 +92,8 @@
 
               </div> <!-- container -->
 
-          </div> <!-- content -->
-
-          <footer class="footer text-right">
-            2015 © Moltran.
-        </footer>
-
+          </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- End Right content here -->
-    <!-- ============================================================== -->
-
-
-    <!-- Right Sidebar -->
-
-    <!-- /Right-bar -->
-
 </div>
 <!-- END wrapper -->
 

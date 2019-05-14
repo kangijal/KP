@@ -66,7 +66,7 @@ class Inputdata extends CI_Controller
 			$data2['nama'] = $this->input->post('nama',true);
 			$data2['username'] = $this->input->post('nip',true);
 			$data2['password'] = md5($ttl2);
-			$data2['level'] = 'Guru';
+			$data2['level'] = 'guru';
 			$data2['photo'] = $namaphoto;
 
 			$this->db->insert('user',$data2);
