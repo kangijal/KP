@@ -54,7 +54,7 @@
                                 <?php if(!empty($error)){echo $error;} ?>
 
 
-                                <div class="panel-heading"><h3 class="panel-title">Pengumuman</h3></div>
+                                <div class="panel-heading"><h3 class="panel-title">Tugas</h3></div>
                                 <div class="panel-body">
                                     <form action="<?php echo site_url('guru/pengumuman/tambah');?>" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">                                    
                                         

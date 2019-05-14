@@ -17,7 +17,7 @@
                             </li>
 
                             <li>
-                                <a href="<?= site_url('guru/pengumuman');?>" class="waves-effect"><i class="fa fa-pencil"></i> <span>Pengumuman</span></a>
+                                <a href="<?= site_url('guru/tugas');?>" class="waves-effect"><i class="fa fa-pencil"></i> <span>Tugas</span></a>
                             </li>
                             
                             <li>
@@ -36,11 +36,11 @@
                             </li>
 
                             <li>
-                                <a href="<?php echo site_url('guru/jadwal');?>"><i class="fa fa-th"></i> <span>Jadwal Pelajaran</span></a>
+                                <a href="<?php echo site_url('guru/jadwal');?>" class="waves-effect"><i class="fa fa-th"></i> <span>Jadwal Pelajaran</span></a>
                             </li>
 
                             <li>
-                                <a href="<?php echo site_url('guru/presensi');?>"><i class="fa fa-th"></i> <span>Presensi</span></a>
+                                <a href="<?php echo site_url('guru/presensi');?>" class="waves-effect"><i class="fa fa-th"></i> <span>Presensi</span></a>
                             </li>            
                           </ul>
                         <div class="clearfix"></div>

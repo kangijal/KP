@@ -17,7 +17,7 @@
                             </li>
 
                             <li>
-                                <a href="<?= site_url('user/pengumuman');?>" class="waves-effect"><i class="fa fa-pencil"></i> <span>Pengumuman</span></a>
+                                <a href="<?= site_url('user/tugas');?>" class="waves-effect"><i class="fa fa-pencil"></i> <span>Tugas</span></a>
                             </li>
                             
                             <li>
@@ -36,10 +36,10 @@
                             </li>
 
                             <li>
-                                <a href="<?php echo site_url('user/jadwalpelajaran');?>"><i class="fa fa-th"></i> <span>Jadwal Pelajaran</span></a>
+                                <a href="<?php echo site_url('user/jadwalpelajaran');?>" class="waves-effect"><i class="fa fa-th"></i> <span>Jadwal Pelajaran</span></a>
                             </li>
                             <li>
-                                <a href="<?php echo site_url('user/presensi');?>"><i class="fa fa-th"></i> <span>Presensi</span></a>
+                                <a href="<?php echo site_url('user/presensi');?>" class="waves-effect"><i class="fa fa-th"></i> <span>Presensi</span></a>
                             </li>              
                           </ul>
                         <div class="clearfix"></div>
