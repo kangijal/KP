@@ -13,11 +13,8 @@
     <?php $this->load->view('guru/layouts/sidebar');?>
 
     <div class="content-page">
-            <!-- Start content -->
             <div class="content">
                 <div class="container">
-
-                    <!-- Page-Title -->
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="panel panel-default">
@@ -37,6 +34,9 @@
         <?php }
 
         ?>
+        <div class="panel-heading"><h3 class="panel-title">Nilai</h3></div>
+        <div class="panel-body" align="center">
+
 
         <a href="<?=site_url('guru/nilai/cetak2');?>" target="_blank" class="btn btn-success" style="width: 20%;">Cetak</a>
 
@@ -71,19 +71,16 @@
         </table>
         <!-- /.content -->
 
-      
-  <!-- Add the sidebar's background. This div must be placed
-  immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-  </div> <!-- panel-body -->
-                            </div> <!-- panel -->
-                        </div> <!-- col -->
-                    </div> <!-- End row -->
+      <div class="control-sidebar-bg"></div>
+    </div> <!-- panel-body -->
+  </div> <!-- panel -->
+  </div> <!-- col -->
+  </div> <!-- End row -->
                     <!-- end row -->
 
-                </div> <!-- container -->
+  </div> <!-- container -->
 
-            </div> <!-- content -->
+  </div> <!-- content -->
 
 <?php $this->load->view('guru/layouts/footer');?>
 </body>
