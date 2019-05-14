@@ -28,6 +28,7 @@
                                 <h1 style="text-align: center;">Jadwal Pelajaran Kelas <?= $cek_kelas->nama_ruangan;?></h1>
 
                                   <div class="box-body">
+                                  <h2>HARI SENIN</h2>
                                     <table class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
