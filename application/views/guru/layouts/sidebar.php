@@ -50,7 +50,7 @@
           <li><a href="<?= site_url('guru/nilai');?>"><i class="fa fa-circle-o"></i> Input Nilai</a></li>
           <li><a href="<?=site_url('guru/nilai/lihat_nilai');?>"><i class="fa fa-circle-o"></i> Lihat Nilai</a></li>
 
-          <li><a href="<?=site_url('guru/nilai/create_ekskul');?>"><i class="fa fa-circle-o"></i> Input Nilai Ekstrakurikuler</a></li>
+          <!-- <li><a href="<?=site_url('guru/nilai/create_ekskul');?>"><i class="fa fa-circle-o"></i> Input Nilai Ekstrakurikuler</a></li> -->
         </ul>
       </li>
       <li>
