@@ -80,24 +80,24 @@ class Nilai extends CI_Controller
 		}
 	}
 
-	public function create_ekskul()
-	{
-		$data['siswa'] = $this->db->get('siswa')->result();
-		$data['ekskul'] = $this->db->get('ekskul')->result();
+	// public function create_ekskul()
+	// {
+	// 	$data['siswa'] = $this->db->get('siswa')->result();
+	// 	$data['ekskul'] = $this->db->get('ekskul')->result();
 
-		$this->load->view('guru/nilai/ekskul',$data);
-	}
+	// 	$this->load->view('guru/nilai/ekskul',$data);
+	// }
 
-	public function store_ekskul()
-	{
-		$data['nik_siswa'] = $this->input->post('nik_siswa',true);
-		$data['nama'] = $this->input->post('nama',true);
-		$data['nilai'] = $this->input->post('nilai',true);
+	// public function store_ekskul()
+	// {
+	// 	$data['nik_siswa'] = $this->input->post('nik_siswa',true);
+	// 	$data['nama'] = $this->input->post('nama',true);
+	// 	$data['nilai'] = $this->input->post('nilai',true);
 
-		$this->db->insert('nilai_ekskul',$data);
-		$this->session->set_flashdata('berhasil','Nilai berhasil di input');
-		redirect('guru/nilai/create_ekskul');
-	}
+	// 	$this->db->insert('nilai_ekskul',$data);
+	// 	$this->session->set_flashdata('berhasil','Nilai berhasil di input');
+	// 	redirect('guru/nilai/create_ekskul');
+	// }
 
 	public function cetak2()
 	{

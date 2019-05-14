@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <?php $this->load->view('admin/layouts/header'); ?>
+    <?php $this->load->view('guru/layouts/header'); ?>
 </head>
 
 
@@ -12,13 +12,13 @@
     <div id="wrapper">
 
         <!-- Top Bar Start -->
-        <?php $this->load->view('admin/layouts/top_menu');?>
+        <?php $this->load->view('guru/layouts/top_menu');?>
         <!-- Top Bar End -->
 
 
         <!-- ========== Left Sidebar Start ========== -->
 
-        <?php $this->load->view('admin/layouts/sidebar');?>
+        <?php $this->load->view('guru/layouts/sidebar');?>
         <!-- Left Sidebar End --> 
 
 
@@ -40,7 +40,7 @@
                                 $berhasil = $this->session->flashdata('berhasil');
 
                                 if(!empty($berhasil))
-                                { ?>
+                                    { ?>
 
                                 <div class="alert alert-warning alert-dismissable">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -51,37 +51,41 @@
 
                                 ?>
 
+                                <?php if(!empty($error)){echo $error;} ?>
 
-                                <div class="panel-heading"><h3 class="panel-title">Input Ekstrakurikuler</h3></div>
+
+                                <div class="panel-heading"><h3 class="panel-title">Pengumuman</h3></div>
                                 <div class="panel-body">
-                                    <form action="<?php echo site_url('admin/inputdata/storeekskul');?>" method="POST" class="form-horizontal" role="form">                                    
+                                    <form action="<?php echo site_url('guru/pengumuman/tambah');?>" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">                                    
+                                        
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Ekskul</label>
+                                            <label class="col-md-2 control-label">Deskripsi</label>
                                             <div class="col-md-10">
-                                                <input type="text" name="nama" class="form-control" value="" placeholder="Masukkan Nama Ekskul">
+                                                <textarea name="deskripsi" class="form-control" rows="5"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Upload Photo</label>
+                                            <div class="col-md-10">
+                                                <input type="file" name="photo" />
                                             </div>
                                         </div>
                                         <div class="form-group m-b-0">
                                             <div class="col-sm-offset-2 col-sm-9">
                                               <button type="submit" class="btn btn-info waves-effect waves-light">Tambah</button>
-                                          </div>
-                                      </div>
-                                  </form>
-                              </div> <!-- panel-body -->
-                          </div> <!-- panel -->
-                      </div> <!-- col -->
-                  </div> <!-- End row -->
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div> <!-- panel-body -->
+                            </div> <!-- panel -->
+                        </div> <!-- col -->
+                    </div> <!-- End row -->
                   <!-- end row -->
 
-              </div> <!-- container -->
+                </div> <!-- container -->
 
-          </div> <!-- content -->
-
-          <footer class="footer text-right">
-            2015 © Moltran.
-        </footer>
-
-    </div>
+            </div> <!-- content -->
+        </div>
     <!-- ============================================================== -->
     <!-- End Right content here -->
     <!-- ============================================================== -->
@@ -91,12 +95,12 @@
 
     <!-- /Right-bar -->
 
-</div>
+    </div>
 <!-- END wrapper -->
 
 
 
-<?php $this->load->view('admin/layouts/footer'); ?>
+<?php $this->load->view('guru/layouts/footer'); ?>
 
 </body>
 </html>

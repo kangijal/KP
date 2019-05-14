@@ -41,7 +41,7 @@
                                 <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span> Akademik </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="<?php echo site_url('admin/akademik/jadwal');?>">Jadwal Pelajaran</a></li>
-                
+                                    <li><a href="<?php echo site_url('admin/akademik/presensi');?>">Presensi</a></li>
                                 </ul>
                                 
                             </li>

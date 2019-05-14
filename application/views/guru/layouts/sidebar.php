@@ -17,7 +17,7 @@
                             </li>
 
                             <li>
-                                <a href="<?= site_url('user/pengumuman');?>" class="waves-effect"><i class="fa fa-pencil"></i> <span>Pengumuman</span></a>
+                                <a href="<?= site_url('guru/pengumuman');?>" class="waves-effect"><i class="fa fa-pencil"></i> <span>Pengumuman</span></a>
                             </li>
                             
                             <li>

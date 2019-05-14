@@ -133,6 +133,9 @@
 <!-- END wrapper -->
 
 
+
+<?php $this->load->view('admin/layouts/footer'); ?>
+
 <script>
     $(document).ready(function(){
         $('.hapus').click(function(e) {
