@@ -37,7 +37,11 @@
 
                             <li>
                                 <a href="<?php echo site_url('guru/jadwal');?>"><i class="fa fa-th"></i> <span>Jadwal Pelajaran</span></a>
-                            </li>              
+                            </li>
+
+                            <li>
+                                <a href="<?php echo site_url('guru/presensi');?>"><i class="fa fa-th"></i> <span>Presensi</span></a>
+                            </li>            
                           </ul>
                         <div class="clearfix"></div>
                     </div>

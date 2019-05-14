@@ -37,6 +37,9 @@
 
                             <li>
                                 <a href="<?php echo site_url('user/jadwalpelajaran');?>"><i class="fa fa-th"></i> <span>Jadwal Pelajaran</span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo site_url('user/presensi');?>"><i class="fa fa-th"></i> <span>Presensi</span></a>
                             </li>              
                           </ul>
                         <div class="clearfix"></div>
