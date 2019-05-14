@@ -50,8 +50,13 @@ class Nilai extends CI_Controller
 
 	public function lihat_nilai()
 	{
-		$data['nilai'] = $this->db->select('nilai_siswa.*,siswa.nama,mapel.nama_mapel,ruang_kelas.nama_ruangan')->from('nilai_siswa')->join('siswa','siswa.nis=nilai_siswa.nis','INNER')->join('mapel','mapel.id=nilai_siswa.id')->join('ruang_kelas','ruang_kelas.id=nilai_siswa.id_kelas')->get()->result();
+		$nik = $this->session->userdata('username');
+		$id_kelas = $this->db->where('NIP',$id)->get('wali_kelas')->row();
 
+		$kelas = $this->db->select('wali_kelas.id_kelas, ruang_kelas.nama_ruangan, ruang_kelas.id as id_kelas')->from('wali_kelas')->join('ruang_kelas','ruang_kelas.id=wali_kelas.id_kelas')->get()->row();
+		$kelas_guru = $kelas->id_kelas;
+
+		$data['nilai'] = $this->db->select('nilai_siswa.*, mapel.nama_mapel, ruang_kelas.nama_ruangan, siswa.nama')->from('nilai_siswa')->join('mapel','mapel.id=nilai_siswa.id_mapel')->join('siswa','siswa.nis=nilai_siswa.nis')->join('ruang_kelas','ruang_kelas.id=nilai_siswa.id_kelas')->where('nilai_siswa.id_kelas',$kelas_guru)->get()->result();
 		$this->load->view('guru/nilai/index',$data);
 	}
 
@@ -80,24 +85,24 @@ class Nilai extends CI_Controller
 		}
 	}
 
-	public function create_ekskul()
-	{
-		$data['siswa'] = $this->db->get('siswa')->result();
-		$data['ekskul'] = $this->db->get('ekskul')->result();
+	// public function create_ekskul()
+	// {
+	// 	$data['siswa'] = $this->db->get('siswa')->result();
+	// 	$data['ekskul'] = $this->db->get('ekskul')->result();
 
-		$this->load->view('guru/nilai/ekskul',$data);
-	}
+	// 	$this->load->view('guru/nilai/ekskul',$data);
+	// }
 
-	public function store_ekskul()
-	{
-		$data['nik_siswa'] = $this->input->post('nik_siswa',true);
-		$data['nama'] = $this->input->post('nama',true);
-		$data['nilai'] = $this->input->post('nilai',true);
+	// public function store_ekskul()
+	// {
+	// 	$data['nik_siswa'] = $this->input->post('nik_siswa',true);
+	// 	$data['nama'] = $this->input->post('nama',true);
+	// 	$data['nilai'] = $this->input->post('nilai',true);
 
-		$this->db->insert('nilai_ekskul',$data);
-		$this->session->set_flashdata('berhasil','Nilai berhasil di input');
-		redirect('guru/nilai/create_ekskul');
-	}
+	// 	$this->db->insert('nilai_ekskul',$data);
+	// 	$this->session->set_flashdata('berhasil','Nilai berhasil di input');
+	// 	redirect('guru/nilai/create_ekskul');
+	// }
 
 	public function cetak2()
 	{

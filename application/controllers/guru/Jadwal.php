@@ -11,14 +11,31 @@ class Jadwal extends CI_Controller
 
 	public function index()
 	{
+		$id = $this->session->userdata('username');
+		$id_kelas = $this->db->where('NIP',$id)->get('wali_kelas')->row();
 
+		$kelas = $this->db->select('wali_kelas.id_kelas, ruang_kelas.nama_ruangan, ruang_kelas.id as id_kelas')->from('wali_kelas')->join('ruang_kelas','ruang_kelas.id=wali_kelas.id_kelas')->get()->row();
+		$kelas_guru = $kelas->id_kelas;
+		$data['cek_kelas'] = $kelas;
+
+		$data['senin'] = $this->db->select('jadwal_pelajaran.*, mapel.nama_mapel as nama_mapel, jam.waktu as waktu')->from('jadwal_pelajaran')->join('ruang_kelas', 'ruang_kelas.id=jadwal_pelajaran.id_kelas', 'INNER')->join('mapel','mapel.id=jadwal_pelajaran.id_mapel','INNER')->join('jam','jam.id=jadwal_pelajaran.jam','INNER')->where('hari','1')->like('ruang_kelas.id',$kelas_guru)->get()->result();
+
+		$data['selasa'] = $this->db->select('jadwal_pelajaran.*, mapel.nama_mapel as nama_mapel, jam.waktu as waktu')->from('jadwal_pelajaran')->join('ruang_kelas', 'ruang_kelas.id=jadwal_pelajaran.id_kelas', 'INNER')->join('mapel','mapel.id=jadwal_pelajaran.id_mapel','INNER')->join('jam','jam.id=jadwal_pelajaran.jam','INNER')->where('hari','2')->like('ruang_kelas.id',$kelas_guru)->get()->result();
+
+		$data['rabu'] = $this->db->select('jadwal_pelajaran.*, mapel.nama_mapel as nama_mapel, jam.waktu as waktu')->from('jadwal_pelajaran')->join('ruang_kelas', 'ruang_kelas.id=jadwal_pelajaran.id_kelas', 'INNER')->join('mapel','mapel.id=jadwal_pelajaran.id_mapel','INNER')->join('jam','jam.id=jadwal_pelajaran.jam','INNER')->where('hari','3')->like('ruang_kelas.id',$kelas_guru)->get()->result();
+
+		$data['kamis'] = $this->db->select('jadwal_pelajaran.*, mapel.nama_mapel as nama_mapel, jam.waktu as waktu')->from('jadwal_pelajaran')->join('ruang_kelas', 'ruang_kelas.id=jadwal_pelajaran.id_kelas', 'INNER')->join('mapel','mapel.id=jadwal_pelajaran.id_mapel','INNER')->join('jam','jam.id=jadwal_pelajaran.jam','INNER')->where('hari','4')->like('ruang_kelas.id',$kelas_guru)->get()->result();
+
+		$data['jumat'] = $this->db->select('jadwal_pelajaran.*, mapel.nama_mapel as nama_mapel, jam.waktu as waktu')->from('jadwal_pelajaran')->join('ruang_kelas', 'ruang_kelas.id=jadwal_pelajaran.id_kelas', 'INNER')->join('mapel','mapel.id=jadwal_pelajaran.id_mapel','INNER')->join('jam','jam.id=jadwal_pelajaran.jam','INNER')->where('hari','5')->like('ruang_kelas.id',$kelas_guru)->get()->result();
+
+		$data['sabtu'] = $this->db->select('jadwal_pelajaran.*, mapel.nama_mapel as nama_mapel, jam.waktu as waktu')->from('jadwal_pelajaran')->join('ruang_kelas', 'ruang_kelas.id=jadwal_pelajaran.id_kelas', 'INNER')->join('mapel','mapel.id=jadwal_pelajaran.id_mapel','INNER')->join('jam','jam.id=jadwal_pelajaran.jam','INNER')->where('hari','6')->like('ruang_kelas.id',$kelas_guru)->get()->result();
+
+		$this->load->view('guru/jadwal/index',$data);
 	}
 
 	public function jadwal()
 	{
-		$data['kelas'] = $this->db->get('ruang_kelas')->result();
-
-		$this->load->view('guru/jadwal/index',$data);
+		
 	}
 
 	public function carijadwalkelas()

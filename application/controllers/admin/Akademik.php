@@ -173,4 +173,11 @@ class Akademik extends CI_Controller
 		$this->session->set_flashdata('berhasil','<b>Jadwal Berhasil Diupdate</b>');
 		redirect('admin/akademik/editjadwal/'.$id);
 	}
+
+	public function presensi()
+	{
+		$data['kelas'] = $this->db->get('presensi')->result();
+
+		$this->load->view('admin/akademik/presensi/index',$data);
+	}
 }

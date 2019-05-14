@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2019 at 08:14 AM
+-- Generation Time: May 14, 2019 at 08:40 PM
 -- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- PHP Version: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -257,6 +257,19 @@ CREATE TABLE `pengumuman` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `presensi`
+--
+
+CREATE TABLE `presensi` (
+  `id` int(10) NOT NULL,
+  `nis` int(15) NOT NULL,
+  `tgl_absen` date NOT NULL,
+  `status` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ruang_kelas`
 --
 
@@ -336,6 +349,18 @@ INSERT INTO `siswa_has_kelas` (`id`, `nis`, `id_kelas`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tugas`
+--
+
+CREATE TABLE `tugas` (
+  `id` int(5) NOT NULL,
+  `deskripsi` varchar(100) NOT NULL,
+  `photo` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -360,8 +385,8 @@ INSERT INTO `user` (`id`, `nama`, `username`, `password`, `level`, `photo`) VALU
 (5, 'Nani', '12222', '6a694fd4f9dea2fa4f19ea62568cb30c', 'siswa', '522_Converted1.png'),
 (6, 'Catur', '112222', '6bb00cab07e6495bd5b2b005483dc4bb', 'siswa', 'logo.jpg'),
 (7, 'nono', '22331', '83114db0c3d783f7aee5b40e50f97c80', 'siswa', '14273.jpg'),
-(8, 'Dini', '111122333444', '8c54075c0a435bd6101abd0589bdb8e2', '2', 'Artboard_9@4x.png'),
-(9, 'Diki', '111122333454', '431c77df35f31fabacd64014bd13fd7c', 'Guru', 'dfadfa6.png'),
+(8, 'Dini', '111122333444', '8c54075c0a435bd6101abd0589bdb8e2', 'guru', 'Artboard_9@4x.png'),
+(9, 'Diki', '111122333454', '431c77df35f31fabacd64014bd13fd7c', 'guru', 'dfadfa6.png'),
 (10, 'Poni', '789', '4832b238aae10022505814c7256081c9', 'siswa', 'Panemu1.jpg');
 
 -- --------------------------------------------------------
@@ -442,6 +467,12 @@ ALTER TABLE `nilai_siswa`
   ADD KEY `id_kelas` (`id_kelas`);
 
 --
+-- Indexes for table `presensi`
+--
+ALTER TABLE `presensi`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `ruang_kelas`
 --
 ALTER TABLE `ruang_kelas`
@@ -460,6 +491,12 @@ ALTER TABLE `siswa_has_kelas`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_kelas` (`id_kelas`),
   ADD KEY `nik` (`nis`);
+
+--
+-- Indexes for table `tugas`
+--
+ALTER TABLE `tugas`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `user`
@@ -516,6 +553,12 @@ ALTER TABLE `nilai_siswa`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112230;
 
 --
+-- AUTO_INCREMENT for table `presensi`
+--
+ALTER TABLE `presensi`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `ruang_kelas`
 --
 ALTER TABLE `ruang_kelas`
@@ -526,6 +569,12 @@ ALTER TABLE `ruang_kelas`
 --
 ALTER TABLE `siswa_has_kelas`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tugas`
+--
+ALTER TABLE `tugas`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
