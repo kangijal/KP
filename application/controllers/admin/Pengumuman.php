@@ -6,7 +6,7 @@ class Pengumuman extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		
+		$this->load->model('M_data');
 		
 	}
 
@@ -16,18 +16,16 @@ class Pengumuman extends CI_Controller
 	}
 
 public function tampil_peng(){
-		$data['pengumuman']=$this->m_data->GetData('pengumuman');
+		$data['pengumuman']=$this->M_data->GetData('pengumuman');
 		
-		$this->load->view('Admin/header_admin');
 		$this->load->view('admin/pengumuman/v_datapeng',$data);
-		$this->load->view('Admin/footer_admin');
 	}
+
 	public function tambah_peng(){
 		
-		$this->load->view('Admin/header_admin');
 		$this->load->view('admin/pengumuman/tambah_peng');
-		$this->load->view('Admin/footer_admin');
 	}
+
 	public function tambah_aksi_peng(){
 
 		// $config=[
@@ -93,11 +91,11 @@ public function tampil_peng(){
             'isi' => $ks[0]['isi'],
             'gambar' => $ks[0]['gambar'],
             'tanggal' => $ks[0]['tanggal'],
-            );
-        $this->load->view('Admin/header_admin');
+			);
+			
 		$this->load->view('admin/pengumuman/edit_peng',$data);
-		$this->load->view('Admin/footer_admin');
-    }
+	}
+	
     public function edit_aksi_peng(){
     	$id=$this->input->post('id_pengumuman');
     	$tgl=$this->input->post('tgl');

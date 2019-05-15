@@ -1,43 +1,39 @@
-<div class="col-md-2">
-  <div id="sidebar-nav" class="sidebar">
-      <div class="sidebar-scroll">
-        <nav>
-          <ul class="nav">
-            <li><a href="<?php echo site_url('Admin/tampil_guru')?>" class=""><i class="lnr lnr-dice"></i> <span>Data Guru</span></a></li>
-            <li><a href="<?php echo site_url('Admin/tampil_siswa')?>" class="active"><i class="lnr lnr-dice"></i> <span>Data Siswa</span></a></li>
-            <li><a href="<?php echo base_url('Admin/tampil_tahun')?>" class=""><i class="lnr lnr-dice"></i> <span>Data Tahun Ajaran</span></a></li>
-            <li><a href="<?php echo site_url('Admin/tampil_kelas')?>" class=""><i class="lnr lnr-dice"></i> <span>Data Kelas</span></a></li>
-            <li><a href="<?php echo base_url('Admin/tampil_peng')?>" class=""><i class="lnr lnr-dice"></i> <span>Data Pengumuman</span></a></li>
-            
-            <li><a href="<?php echo base_url('Admin/tampil_ber')?>" class=""><i class="lnr lnr-dice"></i> <span>Data Berita</span></a></li>
-            <li>
-              <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Laporan</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-              <div id="subPages" class="collapse ">
-                <ul class="nav">
-                  <li><a href="<?php echo base_url('C_report/tampil_guru')?>" class="">Laporan Data Guru</a></li>
-                  <li><a href="<?php echo base_url('C_report/tampil_siswa')?>" class="">Laporan Data Siswa</a></li>
-                  <li><a href="<?php echo base_url('C_report/tampil_kelas')?>" class="">Laporan Data Kelas</a></li>
-                </ul>
-              </div>
-            </li>
-            
-          </ul>
-        </nav>
-      </div>
-    </div> 
-  </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <?php $this->load->view('admin/layouts/header'); ?>
+</head>
 
-    <div class="col-md-10 ">
-        <div class="row">
-            <ol class="breadcrumb">
-                <li><a href="#">
-                    <em class="fa fa-home"></em>
-                </a></li>
-                <li class="active">Data Guru</li>
-            </ol>
-        </div><!--/.row-->
+
+
+<body class="fixed-left">
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Top Bar Start -->
+        <?php $this->load->view('admin/layouts/top_menu');?>
+        <!-- Top Bar End -->
+
+
+        <!-- ========== Left Sidebar Start ========== -->
+
+        <?php $this->load->view('admin/layouts/sidebar');?>
+        <!-- Left Sidebar End --> 
+
+
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->                      
+        <div class="content-page">
+			<!-- MAIN CONTENT -->
+			<div class="content">
+				<div class="container">
+					<h3 class="page-title">Tables</h3>
+					<div class="row">
         
-        <div class="row">
+          <div class="row">
             <div class="col-lg-10">
                 <h1 class="page-header">Edit Data Siswa</h1>
             </div>
@@ -89,5 +85,29 @@
         </div>
         </div>
         </div>
-        
- 
+				</div>
+			</div>
+			<!-- END MAIN CONTENT -->
+		</div>
+		<!-- END MAIN -->
+		<div class="clearfix"></div>
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Right content here -->
+    <!-- ============================================================== -->
+
+
+    <!-- Right Sidebar -->
+
+    <!-- /Right-bar -->
+
+</div>
+<!-- END wrapper -->
+
+
+
+<?php $this->load->view('admin/layouts/footer'); ?>
+
+</body>
+</html>

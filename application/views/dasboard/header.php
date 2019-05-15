@@ -84,7 +84,7 @@
 						<ul>
 							<li><a href="#fh5co-hero">Beranda</a></li>
 							<li><a href="#fh5co-testimonial">Profil</a></li>
-							<li><a href="#fh5co-blog">Berita</a></li>
+							<!-- <li><a href="#fh5co-blog">Berita</a></li> -->
 							<li><a href="#fh5co-counter">Data Sekolah</a></li>
 							<li><a href="#pengumuman">Pengumuman</a></li>
 							<li><a href="#fh5co-footer">Contact</a></li>
