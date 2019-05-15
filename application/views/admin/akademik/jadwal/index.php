@@ -33,8 +33,10 @@
                                 <?php }
 
                                 ?>
-
+                                <div>
+                                <button type="button" class="btn btn-success">Tambah jadwal<a href="<?= site_url('admin/akademik/tambahjadwal');?>"></a></button>
                                 <a href="<?= site_url('admin/akademik/tambahjadwal');?>">tambah jadwal</a>
+                                </div>
                                 <div class="panel-heading"><h3 class="panel-title">Cari Jadwal</h3></div>
                                 <div class="panel-body">
                                    

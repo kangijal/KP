@@ -9,7 +9,7 @@
 		   			<div class="row">
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
-			   					<h1>Meningkatkan mutu, meraih prestasi, bertaqwa, terampil dan berbudi luhur</h1>		
+			   					<h1>Beriman, Cerdas, Sehat, Terampil, Mandiri, Berbudaya dan Berwawasan Lingkungan</h1>		
 			   				</div>
 			   			</div>
 			   		</div>
@@ -21,7 +21,7 @@
 		   			<div class="row">
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
-			   					<h1>Meningkatkan mutu, meraih prestasi, bertaqwa, terampil dan berbudi luhur</h1>
+			   					<h1>Kegiatan di saat Peringatan hari Kartini</h1>
 											
 			   				</div>
 			   			</div>
@@ -34,7 +34,7 @@
 		   			<div class="row">
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
-			   					<h1>Meningkatkan mutu, meraih prestasi, bertaqwa, terampil dan berbudi luhur</h1>
+			   					<h1>Kegiatan di saat Peringatan hari Kartini</h1>
 			   				</div>
 			   			</div>
 			   		</div>
@@ -63,7 +63,7 @@
 								<div class="testimony-slide active text-center">
 									<span>Sejarah Singkat<br></span>
 									<blockquote>
-										<p>&ldquo;SD Indrajaya 02 berdiri sejak 1 januari 1976. SD Indrajaya 02 bukan merupakan sekolah yang berprestasi pada bidang akademik seperti olimpiade, LCC dan lain-lain, namun SD Indrajaya banyak berprestasi dalam bidang non akademik seperti olahraga seni dan lain-lain.&rdquo;</p>
+										<p>&ldquo;SDN 2 Pedes terletak di Surobayan RT 02 Argomulyo, Sedayu, Bantul, Yogyakarta. &rdquo;</p>
 									</blockquote>
 								</div>
 							</div>
@@ -71,10 +71,10 @@
 								<div class="testimony-slide active">
 									<span>Visi<br></span>
 									<blockquote>
-										<p>&ldquo;Meningkatkan mutu, meraih prestasi, bertaqwa, terampil dan berbudi luhur.&rdquo;</p>
+										<p>&ldquo;Beriman, Cerdas, Sehat, Terampil, Mandiri, Berbudaya dan Berwawasan Lingkungan.&rdquo;</p>
 									</blockquote>
 									<br>
-									<span>Misi</span>
+									<!-- <span>Misi</span>
 									<blockquote>
 											Meningkatkan rata-rata daya serap siswa dalam KBM&rdquo;<br>	
 											&ldquo;Meningkatkan rata-rata perolehan nilai ujian sekolah&rdquo;<br>	
@@ -90,7 +90,7 @@
 											&ldquo;Meningkatkan kualitas mengajar lewat pertemuan KKG di gugus sekolah maupun pusat kegiatan guru&rdquo;<br>
 											&ldquo;Menigkatkan kemampuan penguasaan bahasa inggris siswa melalui jam tambahan diluar jam pelajaran&rdquo;<br>
 											&ldquo;Meningkatkan kemampuan siswa dalam bidang seni tradisional melalui ekstra kurikuler &rdquo;<br>
-									</blockquote>
+									</blockquote> -->
 								</div>
 							</div>
 							
@@ -102,15 +102,15 @@
 	</div>
 
 	
-<div id="fh5co-blog">
+<!-- <div id="fh5co-blog">
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>Berita</h2>
 					
 				</div>
-			</div>
-			<div class="row">
+			</div> -->
+			<!-- <div class="row"> -->
 				<?php foreach ($berita as $row) {?>
 				 
 				<div class="col-lg-4 col-md-4">
@@ -134,7 +134,7 @@
 
 	
 <div id="fh5co-counter" class="fh5co-counters" style="background-image: url(<?=base_url()?>assets/images/img_bg_4.jpg);" data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
+		<div class="overlay" style="background-color:#6bbaef"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
@@ -186,7 +186,7 @@
 						<div class="blog-text">
 							<h3><a href="#"><?php echo $row->judul;?></a></h3>
 							<span class="posted_on"><?php echo $row->tanggal;?></span>
-							<span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
+							<!-- <span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span> -->
 							<p><?php echo substr($row->isi,0,200);?></p>
 
 							<p><a href="<?php echo base_url()."Dashboard/tampil_pengdetail/".$row->id_pengumuman;?>">Read More</a></p>

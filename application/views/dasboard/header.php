@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>dashboard SDN Indrajaya</title>
+	<title>dashboard SDN 2 Pedes</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -77,14 +77,14 @@
 				<div class="row">
 					<div class="col-xs-2">
 						<div class="col-xs-2">
-						<img src="<?php echo base_url(),'assets/img/logo.png' ?>" width=150px>
+						<img src="<?php echo base_url(),'assets/img/pedes.png' ?>" width=150px>
 					</div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
 							<li><a href="#fh5co-hero">Beranda</a></li>
 							<li><a href="#fh5co-testimonial">Profil</a></li>
-							<li><a href="#fh5co-blog">Berita</a></li>
+							<!-- <li><a href="#fh5co-blog">Berita</a></li> -->
 							<li><a href="#fh5co-counter">Data Sekolah</a></li>
 							<li><a href="#pengumuman">Pengumuman</a></li>
 							<li><a href="#fh5co-footer">Contact</a></li>

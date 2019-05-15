@@ -1,13 +1,13 @@
 <footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
-		<div class="overlay"></div>
+		<div class="overlay" style="background-color:#206899"></div>
 		<div class="container">
 			<div class="row row-pb-md">
 				<div class="col-md-3 fh5co-widget">
 					<h3>Contact Us</h3>
 					<ul class="fh5co-footer-links">
-						<li><a href="#"class="icon-location"> Jln Raya Indrajaya No 41, RT/RW 2/3, Dsn. Salarum, Ds./Kel Indrajaya, Kec. Salem, Kab. Brebes, Prov. Jawa Tengah, 52275 </a></li>
+						<li><a href="#"class="icon-location"> Surobayan RT 02 Argomulyo, Sedayu, Bantul, Yogyakarta </a></li>
 						<li><a href="#"class="icon-phone"> Call-0852-2741-5899  </a></li>
-						<li><a href="#"class="icon-mail"> sdnindrajaya02@gmail.com</a></li>
+						<li><a href="#"class="icon-mail"> sdn2pedes@gmail.com</a></li>
 					</ul>
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
@@ -30,7 +30,7 @@
 				</div>
 			</div>
 
-			<div class="row copyright">
+			<!-- <div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
 						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
@@ -39,7 +39,7 @@
 				</div>
 			</div>
 
-		</div>
+		</div> -->
 	</footer>
 	</div>
 
