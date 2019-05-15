@@ -39,20 +39,6 @@
                                 <a href="<?php echo site_url('guru/jadwal');?>" class="waves-effect"><i class="fa fa-th"></i> <span>Jadwal Pelajaran</span></a>
                             </li>
 
-<<<<<<< HEAD
-          <!-- <li><a href="<?=site_url('guru/nilai/create_ekskul');?>"><i class="fa fa-circle-o"></i> Input Nilai Ekstrakurikuler</a></li> -->
-        </ul>
-      </li>
-      <li>
-        <a href="<?= site_url('guru/jadwal');?>">
-        <i class="fa fa-th"></i> <span>Jadwal Pelajaran</span>
-        </a>
-      </li>  
-    </ul>
-  </div>
-  <!-- /.sidebar -->
-</div>
-=======
                             <li>
                                 <a href="<?php echo site_url('guru/presensi');?>" class="waves-effect"><i class="fa fa-th"></i> <span>Presensi</span></a>
                             </li>            
@@ -64,4 +50,3 @@
             </div>
             
   
->>>>>>> f4778cd6f46e31a41f7c8bdbf5c987bd350428ea

@@ -45,6 +45,9 @@
                                 </ul>
                                 
                             </li>
+                            <li>
+                                <a href="<?= site_url('admin/pengumuman/v_datapeng');?>" class="waves-effect active"><i class="md md-mail"></i><span> Pengumuman </span></a>
+                            </li>
 
                                     </li>
                                 </ul>
