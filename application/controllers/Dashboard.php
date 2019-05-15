@@ -12,7 +12,7 @@ class Dashboard extends CI_Controller {
     }
     function index()
     {
-        $data['berita']=$this->m_data->GetData('berita');
+        
         $data['pengumuman']=$this->m_data->GetPengumuman();
         $data['guru']=$this->m_data->Getjumlahguru();
         $data['siswa']=$this->m_data->Getjumlahsiswa();

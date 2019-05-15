@@ -130,7 +130,7 @@
 				
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	
 <div id="fh5co-counter" class="fh5co-counters" style="background-image: url(<?=base_url()?>assets/images/img_bg_4.jpg);" data-stellar-background-ratio="0.5">
