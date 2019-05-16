@@ -3,7 +3,7 @@
 <head>
   <?php $this->load->view('user/layouts/header');?>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="fixed-left">
   <div id="wrapper">
 
     <?php $this->load->view('user/layouts/top_menu');?>
@@ -63,24 +63,14 @@
                     <b>Alamat</b> <a class="pull-right"><?= $profil->alamat;?></a>
                   </li>
                 </ul>
-
               </div>
-              <!-- /.box-body -->
             </div>
           </div>
         </div>
-        <!-- /.box -->
-
       </section>
-      <!-- /.content -->
-
     </div>
-    
-  <!-- Add the sidebar's background. This div must be placed
-  immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
-<!-- ./wrapper -->
 
 <?php $this->load->view('user/layouts/footer');?>
 </body>
