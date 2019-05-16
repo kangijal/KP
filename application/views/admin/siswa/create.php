@@ -99,11 +99,11 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label" for="example-email">Tahun Ajaran</label>
+                                            <label class="col-md-2 control-label" for="example-email">Tahun Masuk</label>
                                             <div class="col-md-10">
-                                                <select name="thn_ajaran" class="form-control required">
-                                                    <option disabled selected>Tahun Ajaran</option>
-                                                    <?php for($i=2009;$i<=2100;$i++){$a = $i+1; echo "<option>$i-$a</option>";}?>
+                                                <select name="th_masuk" class="form-control required">
+                                                    <option disabled selected>Tahun Masuk</option>
+                                                    <?php for($i=2009;$i<=2030;$i++){ echo "<option>$i</option>";}?>
                                                 </select>
                                             </div>
                                         </div>

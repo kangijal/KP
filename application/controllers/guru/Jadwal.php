@@ -12,7 +12,7 @@ class Jadwal extends CI_Controller
 	public function index()
 	{
 		$id = $this->session->userdata('username');
-		$id_kelas = $this->db->where('NIP',$id)->get('wali_kelas')->row();
+		$id_kelas = $this->db->where('id_guru',$id)->get('wali_kelas')->row();
 
 		$kelas = $this->db->select('wali_kelas.id_kelas, ruang_kelas.nama_ruangan, ruang_kelas.id as id_kelas')->from('wali_kelas')->join('ruang_kelas','ruang_kelas.id=wali_kelas.id_kelas')->get()->row();
 		$kelas_guru = $kelas->id_kelas;

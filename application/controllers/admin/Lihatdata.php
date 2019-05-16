@@ -128,6 +128,13 @@ class Lihatdata extends CI_Controller
 
 	public function destroyguru($id)
 	{
+		$data['nama']= $this->db->select('nama')->from('guru')->where('id',$id);
+		$data['jk']= $this->db->select('jk')->from('guru')->where('id',$id);
+		$data['nope']= $this->db->select('nope')->from('guru')->where('id',$id);
+		$data['alamat']= $this->db->select('alamat')->from('guru')->where('id',$id);
+		$data['ket']= $this->input->post('ket',true);
+		$this->db->insert('guru',$data);
+
 		$this->db->where('id',$id)->delete('guru');
 
 		redirect('admin/lihatdata/guru');

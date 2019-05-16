@@ -67,7 +67,7 @@
                 </div>
               </div>
 
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="inputEmail3" class="col-md-2 control-label">Kelas</label>
                 <div class="col-md-6">
                   <select name="id_kelas" class="form-control">
@@ -77,7 +77,7 @@
                     <?php endforeach;?>
                   </select>
                 </div>
-              </div>
+              </div> -->
 
               <div class="form-group">
                 <label for="inputPassword3" class="col-md-2 control-label">Mata Pelajaran</label>
@@ -112,12 +112,12 @@
                 </div>
               </div>
 
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="inputPassword3" class="col-md-2 control-label">Tugas</label>
                 <div class="col-md-6">
                   <input type="number" name="tugas" class="form-control">
                 </div>
-              </div>
+              </div> -->
 
               <div class="form-group">
                 <label for="inputPassword3" class="col-md-2 control-label">UTS</label>

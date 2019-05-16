@@ -38,9 +38,9 @@
                             <li>
                                 <a href="<?php echo site_url('user/jadwalpelajaran');?>" class="waves-effect"><i class="fa fa-th"></i> <span>Jadwal Pelajaran</span></a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="<?php echo site_url('user/presensi');?>" class="waves-effect"><i class="fa fa-th"></i> <span>Presensi</span></a>
-                            </li>              
+                            </li>               -->
                           </ul>
                         <div class="clearfix"></div>
                     </div>

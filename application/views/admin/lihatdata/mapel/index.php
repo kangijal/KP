@@ -56,7 +56,7 @@
                                 <div class="panel-body">
                                     <!-- Isi COntent ====================== -->
                                     <a href="<?=site_url('admin/lihatdata/cetakmapel');?>" class="btn btn-success" style="width: 20%; margin-bottom: 20px" target="_blank">CETAK</a>
-                                    <table class="datatables table table-bordered table-striped" id="datatable-editable">
+                                    <table class="datatables table table-bordered table-striped" >
                                         <thead>
                                             <tr>
                                                 <th>No</th>
@@ -77,8 +77,8 @@
                                                     <td class="actions">
                                                         <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
                                                         <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                                        <a href="<?= site_url('admin/lihatdata/editmapel/'.$sw->id);?>" class="on-default edit-row"><i class="fa fa-pencil" siswa="<?= $sw->id;?>"></i></a>
-                                                        <a href="" class="on-default remove-row"><i class="fa fa-trash-o hapus" siswa="<?= $sw->id;?>"></i></a>
+                                                        <button class="btn-success" href="<?= site_url('admin/lihatdata/editmapel/'.$sw->id);?>" class="on-default edit-row"><i class="fa fa-pencil" siswa="<?= $sw->id;?>"></i></button>
+                                                        <button class="btn-danger" href="" class="on-default remove-row"><i class="fa fa-trash" siswa="<?= $sw->id;?>"></i></button>
                                                     </td>
                                                     
                                                 </tr>

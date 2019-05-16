@@ -48,10 +48,10 @@
 
                 <ul class="list-group list-group-unbordered">
                   <li class="list-group-item">
-                    <b>NIK</b> <a class="pull-right"><?= $profil->nis;?></a>
+                    <b>NIS</b> <a class="pull-right"><?= $profil->nis;?></a>
                   </li>
                   <li class="list-group-item">
-                    <b>Tahun Ajaran</b> <a class="pull-right"><?= $profil->thn_ajaran;?></a>
+                    <b>Tahun masuk</b> <a class="pull-right"><?= $profil->th_masuk;?></a>
                   </li>
                   <li class="list-group-item">
                     <b>No. Handphone</b> <a class="pull-right"><?= $profil->nope;?></a>

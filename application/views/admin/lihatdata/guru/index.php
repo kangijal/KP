@@ -58,7 +58,7 @@
 
                                     
                                     <a href="<?=site_url('admin/lihatdata/cetakguru');?>" class="btn btn-success" style="width: 20%; margin-bottom: 20px" target="_blank">CETAK</a>
-                                    <table class="data table table-striped" id="datatable-editable">
+                                    <table class="data table table-striped">
                                      <thead>
                                         <tr>
                                             <th>No</th>
@@ -87,8 +87,8 @@
                                                 <td><?= $sw->alamat; ?></td>
                                                 <td><?= $sw->nope;?></td>
                                                 <td class="actions">
-                                                    <a href="<?=site_url('admin/lihatdata/editguru/'.$sw->id);?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
-                                                    <a class="pull-right" href="<?=site_url('admin/lihatdata/destroyguru/'.$sw->id);?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</a>
+                                                    <button class="btn-success" href="<?=site_url('admin/lihatdata/editguru/'.$sw->id);?>"><span class="fa fa-pencil" aria-hidden="true"></span></button>
+                                                    <button class="btn-danger" href="<?=site_url('admin/lihatdata/destroyguru/'.$sw->id);?>"><span class="fa fa-trash" aria-hidden="true"></span></button>
                                                 </td>
 
                                             </tr>

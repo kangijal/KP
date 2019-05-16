@@ -111,7 +111,7 @@
 				</div>
 			</div> -->
 			<!-- <div class="row"> -->
-				<?php foreach ($berita as $row) {?>
+				<!-- <?php foreach ($berita as $row) {?>
 				 
 				<div class="col-lg-4 col-md-4">
 					<div class="fh5co-blog animate-box">

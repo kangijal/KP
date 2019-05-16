@@ -36,18 +36,25 @@
                                     <li><a href="<?php echo site_url('admin/lihatdata/lihatwalikelas');?>">Data Wali Kelas</a></li>
                                 </ul>
                             </li>
-
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span> Akademik </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <a href="#" class="waves-effect"><i class="fa fa-upload"></i><span> Naik Kelas </span><span class="pull-right"><i class="md md-add"></i></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="<?php echo site_url('admin/akademik/jadwal');?>">Jadwal Pelajaran</a></li>
-                                    <li><a href="<?php echo site_url('admin/akademik/presensi');?>">Presensi</a></li>
+                                    <li><a href="<?php echo site_url('admin/naikkelas/kelas1');?>">kelas 1</a></li>
+                                    <li><a href="<?php echo site_url('admin/naikkelas/kelas2');?>">kelas 2</a></li>
+                                    <li><a href="<?php echo site_url('admin/naikkelas/kelas3');?>">kelas 3</a></li>
+                                    <li><a href="<?php echo site_url('admin/naikkelas/kelas4');?>">kelas 4</a></li>
+                                    <li><a href="<?php echo site_url('admin/naikkelas/kelas5');?>">kelas 5</a></li>
+                                    <li><a href="<?php echo site_url('admin/naikkelas/kelas6');?>">kelas 6</a></li>
                                 </ul>
-                                
                             </li>
                             <li>
-                                <a href="<?= site_url('admin/pengumuman/tampil_peng');?>" class="waves-effect active"><i class="md md-mail"></i><span> Pengumuman </span></a>
+                                <a href="<?php echo site_url('admin/akademik/jadwal');?>" class="waves-effect"><i class="md md-invert-colors-on"></i><span>Jadwal Pelajaran</span></a>
                             </li>
+                            
+                            <li>
+                                <a href="<?= site_url('admin/pengumuman/tampil_peng');?>" class="waves-effect"><i class="fa fa-pencil"></i><span> Pengumuman </span></a>
+                            </li>
+                            
 
                                     </li>
                                 </ul>

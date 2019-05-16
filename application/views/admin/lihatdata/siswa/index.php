@@ -53,7 +53,7 @@
                                                     <th>Nama</th>
                                                     <th>Kelas</th>
                                                     <th>Jenis Kelamin</th>
-                                                    <th>Tahun Ajaran</th>
+                                                    <th>Tahun Masuk</th>
                                                     <th>Tempat tgl lahir</th>
                                                     <th>No. Handphone</th>
                                                     <th>Alamat</th>
@@ -71,13 +71,13 @@
                                                         <td><?= $sw->nama; ?></td>
                                                         <td><?= $sw->id_kelas; ?></td>
                                                         <td><?= $sw->jk; ?></td>
-                                                        <td><?= $sw->thn_ajaran; ?></td>
+                                                        <td><?= $sw->th_masuk; ?></td>
                                                         <td><?= $sw->ttl; ?></td>
                                                         <td><?= $sw->nope; ?></td>
                                                         <td><?= $sw->alamat; ?></td>
                                                         <td class="actions">
-                                                            <a href="<?=site_url('admin/lihatdata/editsiswa/'.$sw->nis);?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
-                                                            <a class="pull-right" href="<?=site_url('admin/lihatdata/destroysiswa/'.$sw->nis);?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</a>
+                                                            <button class="btn-success" href="<?=site_url('admin/lihatdata/editsiswa/'.$sw->nis);?>"><span class="fa fa-pencil" aria-hidden="true"></span></button>
+                                                            <button class="btn-danger" href="<?=site_url('admin/lihatdata/destroysiswa/'.$sw->nis);?>"><span class="fa fa-trash" aria-hidden="true"></span></button>
                                                         </td>
 
                                                     </tr>

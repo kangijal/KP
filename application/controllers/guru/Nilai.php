@@ -11,12 +11,15 @@ class Nilai extends CI_Controller
 
 	public function index()
 	{
-		$data['siswa'] = $this->db->get('siswa')->result();
+		$nik = $this->session->userdata('username');
+		$id_kelas = $this->db->where('id_guru',$nik)->get('wali_kelas')->row();
+
+		$kelas = $this->db->select('wali_kelas.id_kelas, ruang_kelas.nama_ruangan, ruang_kelas.id as id_kelas')->from('wali_kelas')->join('ruang_kelas','ruang_kelas.id=wali_kelas.id_kelas')->get()->row();
+		$kelas_guru = $kelas->id_kelas;
+		$data['siswa'] = $this->db->select('*')->from('siswa')->where('id_kelas',$kelas_guru)->get()->result();
 		$data['mapel'] = $this->db->get('mapel')->result();
-		$data['kelas'] = $this->db->get('ruang_kelas')->result();
 
 		$this->load->view('guru/nilai/create',$data);
-
 	}
 
 	public function store()
@@ -30,7 +33,7 @@ class Nilai extends CI_Controller
 		$data['id'] = $this->input->post('id',true);
 		// $data['id'] = $id;
 		$data['nis'] = $this->input->post('nik_siswa',true);
-		$data['id_kelas'] = $this->input->post('id_kelas',true);
+		$data['id_kelas'] = 1;
 		$data['id_mapel'] = $this->input->post('mapel',true);
 		$data['semester'] = $this->input->post('semester',true);
 		// $data['thn_ajaran'] = $this->input->post('thn_ajaran',true);
@@ -51,7 +54,7 @@ class Nilai extends CI_Controller
 	public function lihat_nilai()
 	{
 		$nik = $this->session->userdata('username');
-		$id_kelas = $this->db->where('NIP',$nik)->get('wali_kelas')->row();
+		$id_kelas = $this->db->where('id_guru',$nik)->get('wali_kelas')->row();
 
 		$kelas = $this->db->select('wali_kelas.id_kelas, ruang_kelas.nama_ruangan, ruang_kelas.id as id_kelas')->from('wali_kelas')->join('ruang_kelas','ruang_kelas.id=wali_kelas.id_kelas')->get()->row();
 		$kelas_guru = $kelas->id_kelas;

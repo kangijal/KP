@@ -45,7 +45,7 @@ class Siswa extends CI_Controller
 		$data['id_kelas'] = $this->input->post('id_kelas',true);
 		$data['jk'] = $this->input->post('jk',true);
 		$data['nama'] = $this->input->post('nama',true);
-		$data['thn_ajaran'] = $this->input->post('thn_ajaran',true);
+		$data['th_masuk'] = $this->input->post('th_masuk',true);
 		$data['alamat'] = $this->input->post('alamat',true);
 		$data['nope'] = $this->input->post('nope',true);
 		$ttl1 = $this->input->post('ttl1',true);

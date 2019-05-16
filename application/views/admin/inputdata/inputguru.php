@@ -58,7 +58,7 @@
                                 <div class="panel-body">
                                     <form action="<?php echo site_url('admin/inputdata/storeguru');?>" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">                                    
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">NIP</label>
+                                            <label class="col-md-2 control-label">NIP/ ID</label>
                                             <div class="col-md-10">
                                                 <input type="text" name="nip" class="form-control" value="">
                                             </div>
