@@ -38,7 +38,7 @@
 
           <a target="_blank" class="btn btn-success" href="<?=site_url('user/nilai/cetak');?>">Cetak</a>
 
-            <table class="data table table-striped">
+            <table class="datatables table table-striped">
               <thead>
                 <tr>
                   <th>Mata Pelajaran</th>

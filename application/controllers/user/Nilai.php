@@ -25,7 +25,7 @@ class Nilai extends CI_Controller
 
 	public function cetak()
 	{
-		$nik_siswa = $this->session->userdata('nik');
+		$nik_siswa = $this->session->userdata('username');
 
 		$data['nilai'] = $this->db->select('nilai_siswa.*,mapel.nama_mapel')->from('nilai_siswa')->join('mapel','mapel.kode_mapel=nilai_siswa.kode_mapel')->where('semester','Ganjil')->get()->result();
 

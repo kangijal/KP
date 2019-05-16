@@ -33,43 +33,7 @@
 
                     <!-- Page-Title -->
                     <div class="row">
-                        <div class="col-md-3">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-									<h3 class="panel-title">Pencarian</h3>
-								</div>
-								<div class="panel-body">
-                                <form form action="<?php echo site_url('admin/lihatdata/cariwali');?>" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
-                                    <table width="100%" class="table table-bordered" id="tabeldata">
-                                        <tbody>
-											<tr>
-                                                <td>Kelas
-                                                <select name="kelas" class="form-control">
-                                                    <option></option>
-                                                    <?php foreach($kelas as $sw) : ?>
-                                                        <option value="<?= $sw->id; ?>"><?= $sw->nama_ruangan;?></option>
-                                                    <?php endforeach; ?>
-                                                </select></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tahun Ajaran
-                                                <select name="th_masuk" class="form-control">
-                                                    <option></option>
-                                                        <?php for($i=2009;$i<=2030;$i++){; echo "<option>$i</option>";}?>
-                                                </select></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                <button type="submit" class="btn btn-info waves-effect waves-light pull-right">Cari</button>
-                                                </td>
-                                            </tr>									
-										</tbody>
-									</table>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-9">
+                        <div class="col-sm-12">
                             <div class="panel panel-default">
 
                                 <?php 
@@ -91,7 +55,8 @@
                                 <div class="panel-heading"><h3 class="panel-title">Data Wali Kelas</h3></div>
                                 <div class="panel-body">
                                     <!-- Isi COntent ====================== -->
-                                    <a href="<?=site_url('admin/lihatdata/cetakwali');?>" target="_blank" class="btn btn-success" style="width: 20%; margin-bottom: 20px;">CETAK</a>
+                                    <a href="<?php echo site_url('admin/inputdata/inputwalikelas');?>" class="btn btn-info" style="margin-bottom: 20px;">TAMBAH DATA</a>
+                                    <a href="<?=site_url('admin/lihatdata/cetakwali');?>" target="_blank" class="btn btn-success" style="margin-bottom: 20px;">CETAK</a>
                                     <table class="datatables table table-bordered table-striped">
                                         <thead>
                                             <tr>
@@ -116,7 +81,7 @@
                                                         <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
                                                         <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
                                                         <!-- <a href="<?= site_url('admin/lihatdata/editwali/'.$sw->id);?>" class="on-default edit-row"><i class="fa fa-pencil" siswa="<?= $sw->id;?>"></i></a> -->
-                                                        <button class="btn-danger" href="#" class="on-default remove-row"><i class="fa fa-trash" siswa="<?= $sw->id;?>"></i></button>
+                                                        <a class="btn btn-danger" href="#" class="on-default remove-row"><i class="fa fa-trash" siswa="<?= $sw->id;?>"></i></a>
                                                     </td>
                                                     
                                                 </tr>

@@ -24,15 +24,8 @@
                                 <a href="<?= site_url('user/profil');?>" class="waves-effect"><i class="fa fa-book"></i> <span>Profil</span></a>
                             </li>
 
-                            <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="fa fa-pie-chart"></i>
-                                <span>Nilai</span>
-                                <span class="pull-right"><i class="md md-add"></i></span>
-                                </a>
-                                <ul class="list-unstyled">
-                                  <li><a href="<?php echo site_url('user/nilai/semesterganjil');?>"></i> Semester Ganjil</a></li>
-                                  <li><a href="<?php echo site_url('user/nilai/semestergenap');?>"></i> Semester Genap</a></li>
-                                </ul>
+                            <li>
+                                <a href="<?= site_url('user/nilai/semesterganjil');?>" class="waves-effect"><i class="fa fa-pie-chart"></i> <span>Nilai</span></a>
                             </li>
 
                             <li>

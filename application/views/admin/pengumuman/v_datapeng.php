@@ -19,9 +19,9 @@
 									<h3 class="panel-title">Data Pengumuman</h3>
 								</div>
 								<div class="panel-body">
-									<div class="text-right"><a  href="<?php echo base_url()."admin/pengumuman/tambah_peng";?>" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></a></div>
-            						<br>
-									<table width="100%" class="table table-striped table-bordered">
+									<a  href="<?php echo base_url()."admin/pengumuman/tambah_peng";?>" class="btn btn-success" style="margin-bottom: 20px;"><i aria-hidden="true">TAMBAH PENGUMUMAN</i></a>
+            						
+									<table class=" table table-bordered table-striped" id="dataTables">
 										<thead>
 											<tr>
 												<th>#</th>
@@ -46,9 +46,9 @@
 												<td><?php echo $p->tanggal;?></td>
 												<td><img src="<?php echo base_url().'assets/img/upload/'.$p->gambar;?>" class="img-thumbnail" style="width:500; height: 500;" alt="Image"/></td>
 												
-												<td>
-                									<button href="<?= site_url('admin/pengumuman/edit_peng/'.$p->id_pengumuman);?>" class="btn-xs btn-success"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-													<button href="<?= site_url('admin/pengumuman/delete_peng/'.$p->id_pengumuman);?>" class="btn-xs btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+												<td width="100">
+                									<a href="<?php echo base_url().'admin/pengumuman/edit_peng/'.$p->id_pengumuman;?>" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+													<a href="<?php echo base_url().'admin/pengumuman/delete_peng/'.$p->id_pengumuman;?>" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
 												</td>
 												
 											</tr>

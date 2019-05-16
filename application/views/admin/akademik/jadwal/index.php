@@ -53,7 +53,8 @@
                                             </div>
                                             <div class="col-sm-3">
                                                 <button type="submit" class="btn btn-info waves-effect waves-light">Cari</button>
-                                                <button type="button" class="btn btn-success">Tambah jadwal<a href="<?= site_url('admin/akademik/tambahjadwal');?>"></a></button>
+                                                <a class="btn btn-success" href="<?= site_url('admin/akademik/tambahjadwal');?>">Tambah Jadwal</a>
+
                                             </div>
                                         </div>
                                     </form>

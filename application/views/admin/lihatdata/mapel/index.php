@@ -55,12 +55,12 @@
                                 <div class="panel-heading"><h3 class="panel-title">Data Mata Pelajaran</h3></div>
                                 <div class="panel-body">
                                     <!-- Isi COntent ====================== -->
-                                    <a href="<?=site_url('admin/lihatdata/cetakmapel');?>" class="btn btn-success" style="width: 20%; margin-bottom: 20px" target="_blank">CETAK</a>
+                                    <a href="<?php echo site_url('admin/inputdata/inputmapel');?>" class="btn btn-info" style="margin-bottom: 20px;">TAMBAH DATA</a>
+                                    <a href="<?=site_url('admin/lihatdata/cetakmapel');?>" class="btn btn-success" style=" margin-bottom: 20px" target="_blank">CETAK</a>
                                     <table class="datatables table table-bordered table-striped" >
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Kode Mata Pelajaran</th>
                                                 <th>Nama Mata Pelajaran</th>
                                                 <th>Actions</th>
                                             </tr>
@@ -71,14 +71,12 @@
                                                 <tr class="gradeX">
                                                     <td><?= $nomor;?> </td>
                                                     <?php $nomor++;?>
-                                                    <td><?= $sw->id; ?>
-                                                    </td>
                                                     <td><?= $sw->nama_mapel; ?></td>
                                                     <td class="actions">
                                                         <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
                                                         <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                                        <button class="btn-success" href="<?= site_url('admin/lihatdata/editmapel/'.$sw->id);?>" class="on-default edit-row"><i class="fa fa-pencil" siswa="<?= $sw->id;?>"></i></button>
-                                                        <button class="btn-danger" href="" class="on-default remove-row"><i class="fa fa-trash" siswa="<?= $sw->id;?>"></i></button>
+                                                        <a class="btn btn-success" href="<?= site_url('admin/lihatdata/editmapel/'.$sw->id);?>" class="on-default edit-row"><i class="fa fa-pencil" siswa="<?= $sw->id;?>"></i></a>
+                                                        <a class="btn btn-danger" href="" class="on-default remove-row"><i class="fa fa-trash" siswa="<?= $sw->id;?>"></i></a>
                                                     </td>
                                                     
                                                 </tr>
@@ -124,15 +122,6 @@
 <div style="display: none" id="urlhapus" url="<?php echo site_url('admin/lihatdata/destroymapel/');?>"></div>
 
 <div style="display: none" id="urledit" url="<?php echo site_url('admin/lihatdata/editsiswa/');?>"></div>
-
-<!-- ============================================================== -->
-<!-- End Right content here -->
-<!-- ============================================================== -->
-
-
-<!-- Right Sidebar -->
-
-<!-- /Right-bar -->
 
 </div>
 <!-- END wrapper -->

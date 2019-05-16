@@ -56,9 +56,9 @@
                                 <div class="panel-body">
                                     <!-- Isi COntent ====================== -->
 
-                                    
-                                    <a href="<?=site_url('admin/lihatdata/cetakguru');?>" class="btn btn-success" style="width: 20%; margin-bottom: 20px" target="_blank">CETAK</a>
-                                    <table class="data table table-striped">
+                                    <a href="<?php echo site_url('admin/inputdata/inputguru');?>" class="btn btn-info" style="margin-bottom: 20px">TAMBAH DATA</a>
+                                    <a href="<?=site_url('admin/lihatdata/cetakguru');?>" class="btn btn-success" style="margin-bottom: 20px" target="_blank">CETAK</a>
+                                    <table class="datatables table table-bordered table-striped" >
                                      <thead>
                                         <tr>
                                             <th>No</th>
@@ -87,8 +87,8 @@
                                                 <td><?= $sw->alamat; ?></td>
                                                 <td><?= $sw->nope;?></td>
                                                 <td class="actions">
-                                                    <button class="btn-success" href="<?=site_url('admin/lihatdata/editguru/'.$sw->id);?>"><span class="fa fa-pencil" aria-hidden="true"></span></button>
-                                                    <button class="btn-danger" href="<?=site_url('admin/lihatdata/destroyguru/'.$sw->id);?>"><span class="fa fa-trash" aria-hidden="true"></span></button>
+                                                    <a class="btn btn-success" href="<?=site_url('admin/lihatdata/editguru/'.$sw->id);?>"><span class="fa fa-pencil" aria-hidden="true"></span></a>
+                                                    <a class="btn btn-danger pull-right" href="<?=site_url('admin/lihatdata/destroyguru/'.$sw->id);?>"><span class="fa fa-trash" aria-hidden="true"></span></a>
                                                 </td>
 
                                             </tr>
