@@ -71,7 +71,7 @@ public function tampil_peng(){
 			);
 			$this->m_data->insert('pengumuman',$data);
 			$this->session->set_flashdata('status','Berhasil, Pengumuman baru telah ditambahkan');
-        redirect('Admin/tampil_peng');
+        redirect('admin/pengumuman/tambah_peng');
     }
 
 }
@@ -79,7 +79,7 @@ public function tampil_peng(){
         $id = array('id_pengumuman' => $id);
         $this->load->model('m_data');
         $this->m_data->Delete('pengumuman', $id);
-        redirect('admin/pengumuman/tampil_peng');
+        redirect('admin/pengumuman/v_datapeng');
     }
     public function edit_peng($id){
 		

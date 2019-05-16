@@ -19,37 +19,40 @@
 									<h3 class="panel-title">Data Siswa Kelas 1</h3>
 								</div>
 								<div class="panel-body">
-									<table width="100%" class="table table-striped table-bordered" id="tabeldata">
-										<thead>
-											<tr>
-												<th width="80">No</th>
-												<th >Nama</th>
-												<th>Kelas</th>
-												<th width="120">Tahun masuk</th>
-												<th width="120"><center>Naik kelas</center></th>
-											</tr>
-										</thead>
-									
-										<tbody>
-                                        <?php $no = 1; ?>
-                                            <?php foreach($siswa as $sw) : ?>
-                                                <tr class="gradeX">
-                                                    <td><?= $no++;?> </td>
-                                                    <td><?= $sw->nama; ?></td>
-                                                    <td><?= $sw->kelas; ?></td>
-                                                    <td><?= $sw->th_masuk; ?></td>
-                                                    <td >
-                                                    <select name="kelas" class="form-control">
-                                                    <option>tinggal kelas</option>
-                                                    <?php foreach($naik as $sw) : ?>
-                                                        <option value="<?= $sw->id; ?>"><?= $sw->nama_ruangan;?></option>
-                                                    <?php endforeach; ?>
-                                                    </select></td>
-                                                </tr>
-                                            <?php endforeach; ?>									
-										</tbody>
-									</table>
-                                    <button type="submit" class="btn btn-info waves-effect waves-light pull-right">Verifikasi</button>
+									<form action="" method="POST">
+										<table width="100%" class="table table-striped table-bordered" id="tabeldata">
+											<thead>
+												<tr>
+													<th width="80">No</th>
+													<th >Nama</th>
+													<th>Kelas</th>
+													<th width="120">Tahun masuk</th>
+													<th width="120"><center>Naik kelas</center></th>
+												</tr>
+											</thead>
+										
+											<tbody>
+											<?php $no = 1; ?>
+												<?php foreach($siswa as $sw) : ?>
+													<input name="nis[]" value="<?= $sw->nis ?>">
+													<tr class="gradeX">
+														<td><?= $no++;?> </td>
+														<td><?= $sw->nama; ?></td>
+														<td><?= $sw->kelas; ?></td>
+														<td><?= $sw->th_masuk; ?></td>
+														<td >
+														<select name="kelas[]" class="form-control">
+														<option value="<?= $sw->id_kelas; ?>">tinggal kelas</option>
+														<?php foreach($naik as $sw) : ?>
+															<option value="<?= $sw->id; ?>"><?= $sw->nama_ruangan;?></option>
+														<?php endforeach; ?>
+														</select></td>
+													</tr>
+												<?php endforeach; ?>									
+											</tbody>
+										</table>
+										<button type="submit" class="btn btn-info waves-effect waves-light pull-right">Verifikasi</button>
+									</form>
 								</div>
 							</div>
 						</div>
