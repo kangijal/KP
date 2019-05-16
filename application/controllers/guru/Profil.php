@@ -14,7 +14,7 @@ class Profil extends CI_Controller
 		$id = $this->session->userdata('username');
 
 		$data['photo'] = $this->db->where('username',$id)->get('user')->row();
-		$data['profil'] = $this->db->where('id',$id)->get('guru')->row();
+		$data['profil'] = $this->db->where('NIP',$id)->get('guru')->row();
 		$this->load->view('guru/profil/index',$data);
 	}
 }

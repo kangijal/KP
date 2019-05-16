@@ -17,17 +17,7 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-mail"></i><span> Input Data </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="<?php echo site_url('admin/siswa/create');?>">Input Data Siswa</a></li>
-                                    <li><a href="<?php echo site_url('admin/inputdata/inputguru');?>">Input Data Guru</a></li>
-                                    <li><a href="<?php echo site_url('admin/inputdata/inputmapel');?>">Input Mata Pelajaran</a></li>
-                                    <li><a href="<?php echo site_url('admin/inputdata/inputwalikelas');?>">Input Wali Kelas</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Lihat Data </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Master Data </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="<?php echo site_url('admin/lihatdata/siswa');?>">Data Siswa</a></li>
                                     <li><a href="<?php echo site_url('admin/lihatdata/guru');?>">Data Guru</a></li>

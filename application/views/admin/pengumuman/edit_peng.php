@@ -43,7 +43,7 @@
         <div class="panel panel-default">  
             <div class="panel panel-body">
 
-            <form method="post" action="<?php echo base_url()."Admin/edit_aksi_peng"; ?>">
+            <form method="post" action="<?php echo base_url()."admin/pengumuman/edit_aksi_peng"; ?>">
 
           <div class="form-group row">
             <label for="nama" class="col-sm-2 col-form-label"></label>

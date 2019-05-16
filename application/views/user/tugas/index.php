@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <?php $this->load->view('admin/layouts/header'); ?>
+    <?php $this->load->view('user/layouts/header'); ?>
 </head>
 
 
@@ -12,13 +12,13 @@
     <div id="wrapper">
 
         <!-- Top Bar Start -->
-        <?php $this->load->view('admin/layouts/top_menu');?>
+        <?php $this->load->view('user/layouts/top_menu');?>
         <!-- Top Bar End -->
 
 
         <!-- ========== Left Sidebar Start ========== -->
 
-        <?php $this->load->view('admin/layouts/sidebar');?>
+        <?php $this->load->view('user/layouts/sidebar');?>
         <!-- Left Sidebar End --> 
 
 
@@ -52,37 +52,19 @@
                                 ?>
 
 
-                                <div class="panel-heading"><h3 class="panel-title">Data Kelas</h3></div>
+                                <div class="panel-heading"><h3 class="panel-title">Data Tugas</h3></div>
                                 <div class="panel-body">
                                     <!-- Isi COntent ====================== -->
-                                    <a href="<?=site_url('admin/lihatdata/cetakkelas');?>" class="btn btn-success" style="width: 20%; margin-bottom: 20px" target="_blank">CETAK</a>
-                                    <table class="datatables table table-bordered table-striped">
+                                    <a href="<?=site_url('user/lihatdata/cetakmapel');?>" class="btn btn-success" style="width: 20%; margin-bottom: 20px" target="_blank">CETAK</a>
+                                    <table class="table table-bordered" id="tabeldata">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
-                                                <th>Nama Ruangan</th>
-                                                <th>Jumlah Siswa</th>
-                                                <th>Actions</th>
+                                                <th>Foto</th>
+                                                <th>Deskripsi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php $nomor = 1; ?>
-                                            <?php foreach($kelas as $sw) : ?>
-                                                <tr class="gradeX">
-                                                    <td><?= $nomor;?> </td>
-                                                    <?php $nomor++;?>
-                                                    <td><?= $sw->nama_ruangan; ?>
-                                                    </td>
-                                                    <td><?= $sw->jumlah_siswa; ?></td>
-                                                    <td class="actions">
-                                                        <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                                        <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                                        <a class="btn btn-success" href="<?= site_url('admin/lihatdata/editkelas/'.$sw->id);?>" class="on-default edit-row"><i class="fa fa-pencil" siswa="<?= $sw->id;?>"></i></a>
-                                                        <a class="btn btn-danger" href="" class="on-default remove-row"><i class="fa fa-trash" siswa="<?= $sw->id;?>"></i></a>
-                                                    </td>
-                                                    
-                                                </tr>
-                                            <?php endforeach; ?>
+                                            
                                         </tbody>
                                     </table>
 
@@ -97,7 +79,7 @@
             </div> <!-- content -->
 
             <footer class="footer text-right">
-                2015 © Moltran.
+                KP 2019
             </footer>
 
         </div>
@@ -121,9 +103,9 @@
     </div>
 </div>
 
-<div style="display: none" id="urlhapus" url="<?php echo site_url('admin/lihatdata/destroykelas/');?>"></div>
+<div style="display: none" id="urlhapus" url="<?php echo site_url('user/lihatdata/destroymapel/');?>"></div>
 
-<div style="display: none" id="urledit" url="<?php echo site_url('admin/lihatdata/editsiswa/');?>"></div>
+<div style="display: none" id="urledit" url="<?php echo site_url('user/lihatdata/editsiswa/');?>"></div>
 
 <!-- ============================================================== -->
 <!-- End Right content here -->
@@ -139,7 +121,7 @@
 
 
 
-<?php $this->load->view('admin/layouts/footer'); ?>
+<?php $this->load->view('user/layouts/footer'); ?>
 
 <script>
     $(document).ready(function(){
@@ -147,12 +129,13 @@
             var id = $(this).attr('siswa');
             e.preventDefault();
             swal({
-              title: "Are you sure?",
-              text: "You will not be able to recover this imaginary file!",
+              title: "Yakin?",
+              text: "Data yang dihapus tidak bisa dikembalikan",
               type: "warning",
               showCancelButton: true,
+              cancelButtonText: "Batal",
               confirmButtonColor: "#DD6B55",
-              confirmButtonText: "Yes, delete it!",
+              confirmButtonText: "Yakin",
               closeOnConfirm: false
           },
           function(){

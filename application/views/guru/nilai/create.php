@@ -18,14 +18,7 @@
 
         <!-- ========== Left Sidebar Start ========== -->
 
-        <?php $this->load->view('guru/layouts/sidebar');?>
-        <!-- Left Sidebar End --> 
-
-
-
-        <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->                      
+        <?php $this->load->view('guru/layouts/sidebar');?>                  
         <div class="content-page">
             <!-- Start content -->
             <div class="content">
@@ -55,7 +48,7 @@
                             <div class="panel-heading"><h3 class="panel-title">Input Nilai</h3></div>
                             <div class="panel-body">
                             <form action="<?=site_url('guru/nilai/store');?>" method="POST" class="form-horizontal" role="form">
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="inputEmail3" class="col-md-2 control-label">Siswa</label>
                 <div class="col-md-6">
                   <select name="nik_siswa" class="form-control">
@@ -65,7 +58,7 @@
                     <?php endforeach;?>
                   </select>
                 </div>
-              </div>
+              </div> -->
 
               <!-- <div class="form-group">
                 <label for="inputEmail3" class="col-md-2 control-label">Kelas</label>
@@ -79,7 +72,7 @@
                 </div>
               </div> -->
 
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="inputPassword3" class="col-md-2 control-label">Mata Pelajaran</label>
                 <div class="col-md-6">
                   <select name="mapel" class="form-control">
@@ -110,7 +103,7 @@
                     <?php for($i=2009;$i<=2100;$i++){$a = $i+1; echo "<option>$i-$a</option>";}?>
                   </select>
                 </div>
-              </div>
+              </div> -->
 
               <!-- <div class="form-group">
                 <label for="inputPassword3" class="col-md-2 control-label">Tugas</label>
@@ -119,7 +112,7 @@
                 </div>
               </div> -->
 
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="inputPassword3" class="col-md-2 control-label">UTS</label>
                 <div class="col-md-6">
                   <input type="number" name="uts" class="form-control">
@@ -131,7 +124,37 @@
                 <div class="col-md-6">
                   <input type="number" name="uas" class="form-control">
                 </div>
-              </div>
+              </div> -->
+
+              <table class="datatables table table-striped">
+              <thead>
+                <tr>
+                  <th>Nama</th>              
+                  <th>Mata Pelajaran</th>
+                  <th>Semester</th>
+                  <th>Tahun Ajaran</th>
+                  <th>UTS</th>
+                  <th>UAS</th>                  
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach($nilai as $nilai) : ?>
+                  <tr>
+                    <td><?= $nilai->nama;?></td>
+                    <td><?= $nilai->nama_mapel;?></td>
+                    <td><?= $nilai->semester;?></td>
+                    <td>
+                      <select name="thn_ajaran" class="form-control required">
+                        <option disabled selected>Tahun Ajaran</option>
+                        <?php for($i=2009;$i<=2100;$i++){$a = $i+1; echo "<option>$i-$a</option>";}?>
+                      </select>
+                    </td>
+                    <td><input type="number" name="uts" class="form-control"></td>
+                    <td><input type="number" name="uas" class="form-control"></td>
+                  </tr>
+                <?php endforeach;?>
+              </tbody>
+
 
               <div class="form-group">
                 <div class="col-sm-offset-2 col-md-6">

@@ -69,22 +69,22 @@ public function tampil_peng(){
 				'gambar'=>$file['file_name'],
 				'tanggal'=>$tgl,
 			);
-			$this->m_data->insert('pengumuman',$data);
+			$this->M_data->insert('pengumuman',$data);
 			$this->session->set_flashdata('status','Berhasil, Pengumuman baru telah ditambahkan');
-        redirect('Admin/tampil_peng');
+        redirect('admin/pengumuman/tampil_peng');
     }
 
 }
 	 public function delete_peng($id){
         $id = array('id_pengumuman' => $id);
-        $this->load->model('m_data');
-        $this->m_data->Delete('pengumuman', $id);
+        $this->load->model('M_data');
+        $this->M_data->Delete('pengumuman', $id);
         redirect('admin/pengumuman/tampil_peng');
     }
     public function edit_peng($id){
 		
-    	$this->load->model('m_data');
-        $ks = $this->m_data->GetWhere('pengumuman', array('id_pengumuman' => $id));
+    	$this->load->model('M_data');
+        $ks = $this->M_data->GetWhere('pengumuman', array('id_pengumuman' => $id));
         $data = array(
         	'id_pengumuman'=> $ks[0]['id_pengumuman'],
             'judul' => $ks[0]['judul'],
@@ -113,7 +113,7 @@ public function tampil_peng(){
 			}	
 			else{
 				
-				$this->m_data->delete_foto_peng($id);
+				$this->M_data->delete_foto_peng($id);
 				
 				$data = $this->upload->data(); 
 				$config['image_library'] = 'gd2';  
@@ -137,7 +137,7 @@ public function tampil_peng(){
 				$where=array(
 					'id_pengumuman'=>$id	
 				);
-				$this->m_data->Update('pengumuman',$data,$where);
+				$this->M_data->Update('pengumuman',$data,$where);
 			
 				
 				redirect('admin/pengumuman/tampil_peng');
@@ -153,7 +153,7 @@ public function tampil_peng(){
 			$where=array(
 					'id_pengumuman'=>$id	
 				);
-			$this->m_data->Update('pengumuman',$data,$where);
+			$this->M_data->Update('pengumuman',$data,$where);
 	        redirect('admin/pengumuman/tampil_peng');
 	    }
     }

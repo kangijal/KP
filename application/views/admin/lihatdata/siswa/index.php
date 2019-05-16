@@ -43,9 +43,9 @@
                                 <div class="panel-body">
                                     <!-- Isi COntent ====================== -->
 
-                                    <table class="datatables table table-bordered table-striped" id="datatable-editable">
-                                        <a href="<?=site_url('admin/lihatdata/cetaksiswa');?>" target="_blank" class="btn btn-success" style="width: 20%; margin-bottom: 20px;">CETAK</a>
-                                        <table class="data table table-striped">
+                                        <a href="<?php echo site_url('admin/siswa/create');?>" class="btn btn-info" style=" margin-bottom: 20px;">TAMBAH DATA</a>
+                                        <a href="<?=site_url('admin/lihatdata/cetaksiswa');?>" class="btn btn-success" style=" margin-bottom: 20px;">CETAK</a>
+                                        <table class="datatables table table-bordered table-striped">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
@@ -76,8 +76,8 @@
                                                         <td><?= $sw->nope; ?></td>
                                                         <td><?= $sw->alamat; ?></td>
                                                         <td class="actions">
-                                                            <button class="btn-success" href="<?=site_url('admin/lihatdata/editsiswa/'.$sw->nis);?>"><span class="fa fa-pencil" aria-hidden="true"></span></button>
-                                                            <button class="btn-danger" href="<?=site_url('admin/lihatdata/destroysiswa/'.$sw->nis);?>"><span class="fa fa-trash" aria-hidden="true"></span></button>
+                                                            <a class="btn btn-success" href="<?=site_url('admin/lihatdata/editsiswa/'.$sw->nis);?>"><span class="fa fa-pencil" aria-hidden="true"></span></a>
+                                                            <a class="btn btn-danger" href="<?=site_url('admin/lihatdata/destroysiswa/'.$sw->nis);?>"><span class="fa fa-trash" aria-hidden="true"></span></a>
                                                         </td>
 
                                                     </tr>

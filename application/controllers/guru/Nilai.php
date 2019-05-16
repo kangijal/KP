@@ -11,10 +11,9 @@ class Nilai extends CI_Controller
 
 	public function index()
 	{
-		$nik = $this->session->userdata('username');
-		$id_kelas = $this->db->where('id_guru',$nik)->get('wali_kelas')->row();
+		$nip = $this->session->userdata('username');
 
-		$kelas = $this->db->select('wali_kelas.id_kelas, ruang_kelas.nama_ruangan, ruang_kelas.id as id_kelas')->from('wali_kelas')->join('ruang_kelas','ruang_kelas.id=wali_kelas.id_kelas')->get()->row();
+		$kelas = $this->db->select('wali_kelas.id_kelas, ruang_kelas.nama_ruangan, ruang_kelas.id as id_kelas')->from('wali_kelas')->join('ruang_kelas','ruang_kelas.id=wali_kelas.id_kelas')->where('wali_kelas.id_guru',$nip)->get()->row();
 		$kelas_guru = $kelas->id_kelas;
 		$data['siswa'] = $this->db->select('*')->from('siswa')->where('id_kelas',$kelas_guru)->get()->result();
 		$data['mapel'] = $this->db->get('mapel')->result();
@@ -53,10 +52,9 @@ class Nilai extends CI_Controller
 
 	public function lihat_nilai()
 	{
-		$nik = $this->session->userdata('username');
-		$id_kelas = $this->db->where('id_guru',$nik)->get('wali_kelas')->row();
+		$nip = $this->session->userdata('username');
 
-		$kelas = $this->db->select('wali_kelas.id_kelas, ruang_kelas.nama_ruangan, ruang_kelas.id as id_kelas')->from('wali_kelas')->join('ruang_kelas','ruang_kelas.id=wali_kelas.id_kelas')->get()->row();
+		$kelas = $this->db->select('wali_kelas.id_kelas, ruang_kelas.nama_ruangan, ruang_kelas.id as id_kelas')->from('wali_kelas')->join('ruang_kelas','ruang_kelas.id=wali_kelas.id_kelas')->where('wali_kelas.id_guru',$nip)->get()->row();
 		$kelas_guru = $kelas->id_kelas;
 
 		$data['nilai'] = $this->db->select('nilai_siswa.*, mapel.nama_mapel, ruang_kelas.nama_ruangan, siswa.nama')->from('nilai_siswa')->join('mapel','mapel.id=nilai_siswa.id_mapel')->join('siswa','siswa.nis=nilai_siswa.nis')->join('ruang_kelas','ruang_kelas.id=nilai_siswa.id_kelas')->where('nilai_siswa.id_kelas',$kelas_guru)->get()->result();
