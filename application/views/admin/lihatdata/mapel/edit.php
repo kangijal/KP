@@ -58,7 +58,7 @@
                                     <div class="form-group">
                                         <label class="col-md-2 control-label">Kode Mata Pelajaran</label>
                                         <div class="col-md-10">
-                                            <input type="text" name="kode_mapel" class="form-control" value="<?= $mapel->id;?>">
+                                            <input type="text" name="kode_mapel" class="form-control" value="<?= $mapel->id;?>" readonly>
                                         </div>
                                     </div>
                                     <div class="form-group">

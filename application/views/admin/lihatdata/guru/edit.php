@@ -54,7 +54,7 @@
 
                             <div class="panel-heading"><h3 class="panel-title">Edit Data Guru</h3></div>
                             <div class="panel-body">
-                                <form action="<?php echo site_url('admin/lihatdata/updateguru/'.$guru->id);?>" method="POST" class="form-horizontal" role="form">                                    
+                                <form action="<?php echo site_url('admin/lihatdata/updateguru/'.$guru->NIP);?>" method="POST" class="form-horizontal" role="form">                                    
                                     <div class="form-group">
                                         <label class="col-md-2 control-label">NIP</label>
                                         <div class="col-md-10">

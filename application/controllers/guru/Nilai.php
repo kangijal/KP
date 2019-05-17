@@ -16,7 +16,16 @@ class Nilai extends CI_Controller
 		$kelas = $this->db->select('wali_kelas.id_kelas, ruang_kelas.nama_ruangan, ruang_kelas.id as id_kelas')->from('wali_kelas')->join('ruang_kelas','ruang_kelas.id=wali_kelas.id_kelas')->where('wali_kelas.id_guru',$nip)->get()->row();
 		$kelas_guru = $kelas->id_kelas;
 		$data['siswa'] = $this->db->select('*')->from('siswa')->where('id_kelas',$kelas_guru)->get()->result();
-		$data['mapel'] = $this->db->get('mapel')->result();
+		$data['mapel'] = $this->db->from('mapel')->get()->result_array();
+
+		$data['nilai'] = $this->db->select('*')->from('nilai_siswa')->where('id_kelas',$kelas_guru)->get()->result_array();
+	
+		$data['siswa'] = $this->db->select('siswa.*, ruang_kelas.nama_ruangan')
+		->join("ruang_kelas", "ruang_kelas.id=siswa.id_kelas")
+		->from('siswa')
+		->where('id_kelas',$kelas_guru)
+		->get()->result_array();
+		//print_r($data['nilai']); exit;
 
 		$this->load->view('guru/nilai/create',$data);
 	}
@@ -121,5 +130,140 @@ class Nilai extends CI_Controller
 			// $this->session->set_flashdata('berhasil', 'Maaf, kami mengalami kendala teknis.');
 			// redirect('guru/nilai/lihat_nilai');
 		}
+	}
+
+	public function ratih()
+	{
+		$nis 		= $this->input->post("nis[]");
+		$kelas 		= $this->input->post("kelas[]");
+		$mapel 		= $this->input->post("mapel[]");
+		$semester 	= $this->input->post("semester[]");
+		$uts 		= $this->input->post("uts[]");
+		$uas 		= $this->input->post("uas[]");
+
+        $nilai = $this->db->select("*")->from("nilai_siswa")
+        ->where("id_kelas", $kelas["0"])
+        ->order_by("id", "ASC")
+		->get()->result_array();
+
+		$this->db->trans_begin();
+		if (count($nilai) > 0) {
+			$this->db->where("id_kelas", $kelas["0"])->delete("nilai_siswa");
+
+			for ($i=0; $i<count($nis); $i++) {
+				if (!empty($uts[$i])) {
+					$nilai_uts = $uts[$i];
+				} else {
+					$nilai_uts = "0";
+				}
+
+				if (!empty($uas[$i])) {
+					$nilai_uas = $uas[$i];
+				} else {
+					$nilai_uas = "0";
+				}
+
+				$this->db->insert("nilai_siswa",
+                    array(
+                        "id_kelas" => $kelas["0"],
+                        "id_mapel" => $mapel["0"],
+                        "semester" => $semester["0"],
+                        "uts" => $nilai_uts,
+                        "uas" => $nilai_uas,
+                    )
+                );
+			}
+		} else {
+			for ($i=0; $i<count($nis); $i++) {
+				if (!empty($uts[$i])) {
+					$nilai_uts = $uts[$i];
+				} else {
+					$nilai_uts = "0";
+				}
+
+				if (!empty($uas[$i])) {
+					$nilai_uas = $uas[$i];
+				} else {
+					$nilai_uas = "0";
+				}
+
+				$this->db->insert("nilai_siswa",
+                    array(
+                        "id_kelas" => $kelas[$i],
+                        "id_mapel" => $mapel[$i],
+                        "semester" => $semester[$i],
+                        "uts" => $nilai_uts,
+                        "uas" => $nilai_uas,
+                    )
+                );
+			}
+		}
+
+		if ($this->db->trans_status() === TRUE) {
+            $this->db->trans_commit();
+        }
+        else {
+            $this->db->trans_commit();
+        }
+
+		redirect(base_url()."guru/nilai");
+
+		//aksi tambah jika di form > di db
+        // foreach ($kategorif as $kategorif_key => $kategorif_value) {
+        //     $status = false;
+        //     foreach ($kategorid as $kategorid_key => $kategorid_value) {
+        //         if ($kategorif_key === (int) $kategorid_value["kategori_id"]) {
+        //             $this->db->where("kategori_id", $kategorif_key)
+        //             ->update("kategori",
+        //                 array(
+        //                     "kategori_variabel" => $variabel,
+        //                     "kategori_nama" => $kategorif_value
+        //                 )
+        //             );
+        //             for ($dk=1; $dk<=4; $dk++) {
+        //                 if ($dk === 1) {
+        //                     $nilai = $awal[$kategorif_key];
+        //                 } else if ($dk === 2) {
+        //                     $nilai = $tengahw[$kategorif_key];
+        //                 } else if ($dk === 3) {
+        //                     $nilai = $tengahk[$kategorif_key];
+        //                 } else if ($dk === 4) {
+        //                     $nilai = $akhir[$kategorif_key];
+        //                 } else {
+        //                     $nilai = "0";
+        //                 }
+        //                 $this->db
+        //                 ->where("variabel_relasi_variabel", $variabel)
+        //                 ->where("variabel_relasi_kategori", $kategorif_key)
+        //                 ->where("variabel_relasi_derajat", $dk)
+        //                 ->update("variabel_relasi",
+        //                     array(
+        //                         "variabel_relasi_nilai" => $nilai
+        //                     )
+        //                 );
+        //             }
+        //             $status = true;
+        //         }
+        //     }
+        //     if ($status === false) {
+        //         $this->db->insert("kategori",
+        //             array(
+        //                 "kategori_variabel" => $variabel,
+        //                 "kategori_nama" => $kategorif_value
+        //             )
+        //         );
+        //         $kategori_id = $this->db->insert_id();
+        //         for ($dk=1; $dk<=4; $dk++) {
+        //             $this->db->insert("variabel_relasi",
+        //                 array(
+        //                     "variabel_relasi_variabel" => $variabel,
+        //                     "variabel_relasi_kategori" => $kategori_id,
+        //                     "variabel_relasi_derajat" => $dk,
+        //                     "variabel_relasi_nilai" => "0"
+        //                 )
+        //             );
+        //         }
+        //     }
+        // }
 	}
 }

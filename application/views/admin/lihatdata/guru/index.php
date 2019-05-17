@@ -87,8 +87,8 @@
                                                 <td><?= $sw->alamat; ?></td>
                                                 <td><?= $sw->nope;?></td>
                                                 <td class="actions">
-                                                    <a class="btn btn-success" href="<?=site_url('admin/lihatdata/editguru/'.$sw->id);?>"><span class="fa fa-pencil" aria-hidden="true"></span></a>
-                                                    <a class="btn btn-danger pull-right" href="<?=site_url('admin/lihatdata/destroyguru/'.$sw->id);?>"><span class="fa fa-trash" aria-hidden="true"></span></a>
+                                                    <a class="btn btn-success" href="<?=site_url('admin/lihatdata/editguru/'.$sw->NIP);?>"><span class="fa fa-pencil" aria-hidden="true"></span></a>
+                                                    <a class="btn btn-danger pull-right" href="<?=site_url('admin/lihatdata/destroyguru/'.$sw->NIP);?>"><span class="fa fa-trash" aria-hidden="true"></span></a>
                                                 </td>
 
                                             </tr>

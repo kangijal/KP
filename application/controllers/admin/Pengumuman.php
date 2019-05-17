@@ -71,25 +71,15 @@ public function tampil_peng(){
 			);
 			$this->M_data->insert('pengumuman',$data);
 			$this->session->set_flashdata('status','Berhasil, Pengumuman baru telah ditambahkan');
-<<<<<<< HEAD
         redirect('admin/pengumuman/tambah_peng');
-=======
-        redirect('admin/pengumuman/tampil_peng');
->>>>>>> a62d123d4fa1eb8904c299919e370a5599a20953
     }
 
 }
 	 public function delete_peng($id){
         $id = array('id_pengumuman' => $id);
-<<<<<<< HEAD
         $this->load->model('m_data');
         $this->m_data->Delete('pengumuman', $id);
-        redirect('admin/pengumuman/v_datapeng');
-=======
-        $this->load->model('M_data');
-        $this->M_data->Delete('pengumuman', $id);
         redirect('admin/pengumuman/tampil_peng');
->>>>>>> a62d123d4fa1eb8904c299919e370a5599a20953
     }
     public function edit_peng($id){
 		

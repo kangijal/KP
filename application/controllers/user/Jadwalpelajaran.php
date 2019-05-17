@@ -12,9 +12,9 @@ class Jadwalpelajaran extends CI_Controller
 	public function index()
 	{
 		$nik = $this->session->userdata('username');
-		$id_kelas = $this->db->where('nis',$nik)->get('siswa_has_kelas')->row();
+		$id_kelas = $this->db->where('nis',$nik)->get('siswa')->row();
 
-		$kelas = $this->db->select('siswa_has_kelas.nis,ruang_kelas.nama_ruangan,ruang_kelas.id as id_kelas')->from('siswa_has_kelas')->join('ruang_kelas','ruang_kelas.id=siswa_has_kelas.id_kelas')->get()->row();
+		$kelas = $this->db->select('siswa.nis,ruang_kelas.nama_ruangan,ruang_kelas.id as id_kelas')->from('siswa')->join('ruang_kelas','ruang_kelas.id=siswa.id_kelas')->get()->row();
 		$kelas_siswa = $kelas->id_kelas;
 		$data['cek_kelas'] = $kelas;
 

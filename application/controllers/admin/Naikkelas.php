@@ -78,7 +78,24 @@ class Naikkelas extends CI_Controller
         $this->load->view('admin/naikkelas/kelas6',$data);
     }
 
-    public function naikkelas(){
-        
+    public function simpan(){
+        $method = $_SERVER["REQUEST_METHOD"];	
+			if ($method === "POST") {
+                $jenis = $this->input->post("jenis");
+                $nis = $this->input->post("nis[]");
+                $kelas = $this->input->post("kelas[]");
+
+				for ($i=0; $i<count($nis) ; $i++) { 
+                    $this->db->where("nis", $nis[$i])->update("siswa",
+                        array(
+                            "id_kelas" => $kelas[$i]
+                        )
+                    );
+                }
+
+                redirect(base_url()."admin/naikkelas/".$jenis);
+			} else {
+                redirect(base_url()."admin/naikkelas/".$jenis);
+			}
     }
 }

@@ -19,7 +19,8 @@
 									<h3 class="panel-title">Data Siswa Kelas 1</h3>
 								</div>
 								<div class="panel-body">
-									<form action="" method="POST">
+									<form action="<?= base_url()."admin/naikkelas/simpan" ?>" method="POST">
+										<input name="jenis" value="kelas1" hidden>
 										<table width="100%" class="table table-striped table-bordered" id="tabeldata">
 											<thead>
 												<tr>
@@ -34,7 +35,7 @@
 											<tbody>
 											<?php $no = 1; ?>
 												<?php foreach($siswa as $sw) : ?>
-													<input name="nis[]" value="<?= $sw->nis ?>">
+													<input name="nis[]" value="<?= $sw->nis ?>" hidden>
 													<tr class="gradeX">
 														<td><?= $no++;?> </td>
 														<td><?= $sw->nama; ?></td>

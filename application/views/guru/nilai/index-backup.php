@@ -52,21 +52,21 @@
               <th>Action</th>
             </tr>
           </thead>
-          <tbody><?php
-              $nomor = 1;
-              for ($i=0; $i<count($siswa); $i++) { 
-                for ($j=0; $j<count($mapel); $j++) { ?>
-                  <input name="nis[]" value="<?= $siswa[$i]["nis"] ?>" class="hidden">
-                  <tr>
-                    <td><?= $siswa[$i]["nama"] ?></td>
-                    <td><?= $siswa[$i]["nama_ruangan"] ?></td>
-                    <td><?= $mapel[$j]["nama_mapel"] ?></td>
-                    <td><?= $siswa[$i]["semester"] ?></td>
-                    <td><input type="number" name="uts[]" class="form-control"></td>
-                    <td><input type="number" name="uas[]" class="form-control"></td>
-                  </tr>
-                <?php $nomor++; }
-                } ?>
+          <tbody>
+            <?php foreach($nilai as $nilai) : ?>
+              <tr>
+                <td><?= $nilai->nama;?></td>
+                <td><?= $nilai->nama_ruangan;?></td>
+                <td><?= $nilai->nama_mapel;?></td>
+                <td><?= $nilai->semester;?></td>
+                <td><?= $nilai->uts;?></td>
+                <td><?= $nilai->uas;?></td>
+                <td>
+                  <a class="pull-left" href="">Edit</a>
+                  <a class="pull-right" href="<?=site_url('guru/nilai/destroy/'.$nilai->id);?>">Delete</a>
+                </td>
+              </tr>
+            <?php endforeach;?>
           </tbody>
         </table>
         <!-- /.content -->

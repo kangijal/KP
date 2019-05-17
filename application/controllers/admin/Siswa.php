@@ -56,10 +56,7 @@ class Siswa extends CI_Controller
 		$this->db->insert('siswa',$data);
 
 		
-		$siswakelas['nis'] = $this->input->post('nis',true);
-		$siswakelas['id_kelas'] = $this->input->post('id_kelas',true);
-
-		$this->db->insert('siswa_has_kelas',$siswakelas);
+	
 
 		$user['nama'] = $this->input->post('nama');
 		$user['username'] = $this->input->post('nis',true);

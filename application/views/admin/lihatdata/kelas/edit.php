@@ -60,9 +60,12 @@
                                             <div class="col-sm-4">
                                                 <select name="nama1" class="form-control">
                                                     <option><?php echo $kelas2[0]; ?></option>
-                                                    <option>VII</option>
-                                                    <option>VIII</option>
-                                                    <option>IX</option>
+                                                    <option>I</option>
+                                                    <option>II</option>
+                                                    <option>III</option>
+                                                    <option>IV</option>
+                                                    <option>V</option>
+                                                    <option>VI</option>
                                                 </select>
                                             </div>
                                             <div class="col-sm-4">

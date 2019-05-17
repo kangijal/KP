@@ -76,7 +76,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <label class="col-md-2 control-label" for="example-email">Tahun Ajaran</label>
                                             <div class="col-md-10">
                                                 <select name="thn_ajaran" class="form-control required">
@@ -84,7 +84,7 @@
                                                     <?php for($i=2009;$i<=2100;$i++){$a = $i+1; echo "<option>$i-$a</option>";}?>
                                                 </select>
                                             </div>
-                                            </div>
+                                            </div> -->
 
                                         <div class="form-group">
                                             <label class="col-md-2 control-label" for="example-email">TTL</label>

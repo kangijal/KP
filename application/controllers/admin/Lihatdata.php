@@ -37,7 +37,7 @@ class Lihatdata extends CI_Controller
 		$data['id_kelas'] = $this->input->post('id_kelas',true);
 		$data['jk'] = $this->input->post('jk',true);
 		$data['nama'] = $this->input->post('nama',true);
-		$data['thn_ajaran'] = $this->input->post('thn_ajaran',true);
+		// $data['thn_ajaran'] = $this->input->post('thn_ajaran',true);
 		$data['alamat'] = $this->input->post('alamat',true);
 		$data['nope'] = $this->input->post('nope',true);
 		$data['ttl'] = $this->input->post('ttl',true);
@@ -101,26 +101,26 @@ class Lihatdata extends CI_Controller
 
 	public function editguru($id)
 	{
-		$data['guru'] = $this->db->where('id',$id)->get('guru')->row();
+		$data['guru'] = $this->db->where('NIP',$id)->get('guru')->row();
 
 		$this->load->view('admin/lihatdata/guru/edit',$data);
 	}
 
 	public function updateguru($id)
 	{
-		$data['nip'] = $this->input->post('nip',true);
+		// $data['NIP'] = $this->input->post('nip',true);
 		$data['nama'] = $this->input->post('nama',true);
-		$nama = $this->input->post('nama',true);
-
-		$data['ttl'] = $this->input->post('ttl',true);
-		$data['jabatan'] = $this->input->post('jabatan',true);
-		$data['nope'] = $this->input->post('nope',true);
-		$data['jk'] = $this->input->post('jk',true);
-		$data['agama'] = $this->input->post('agama',true);
+		// $nama = $this->input->post('nama',true);
 		$data['alamat'] = $this->input->post('alamat',true);
-		$nama = $this->input->post('nama',true);
+		// $data['ttl'] = $this->input->post('ttl',true);
+		// $data['jabatan'] = $this->input->post('jabatan',true);
+		// $data['nope'] = $this->input->post('nope',true);
+		// $data['jk'] = $this->input->post('jk',true);
+		// $data['agama'] = $this->input->post('agama',true);
+		// $data['alamat'] = $this->input->post('alamat',true);
+		// $nama = $this->input->post('nama',true);
 
-		$this->db->where('id',$id)->update('guru',$data);
+		$this->db->where('NIP',$id)->update('guru',$data);
 
 		$this->session->set_flashdata('berhasil','Guru dengan nama '.$nama.' berhasil di Update');
 		redirect('admin/lihatdata/editguru/'.$id);
@@ -128,14 +128,14 @@ class Lihatdata extends CI_Controller
 
 	public function destroyguru($id)
 	{
-		$data['nama']= $this->db->select('nama')->from('guru')->where('id',$id);
-		$data['jk']= $this->db->select('jk')->from('guru')->where('id',$id);
-		$data['nope']= $this->db->select('nope')->from('guru')->where('id',$id);
-		$data['alamat']= $this->db->select('alamat')->from('guru')->where('id',$id);
-		$data['ket']= $this->input->post('ket',true);
-		$this->db->insert('guru',$data);
+		// $data['nama']= $this->db->select('nama')->from('guru')->where('id',$id);
+		// $data['jk']= $this->db->select('jk')->from('guru')->where('id',$id);
+		// $data['nope']= $this->db->select('nope')->from('guru')->where('id',$id);
+		// $data['alamat']= $this->db->select('alamat')->from('guru')->where('id',$id);
+		// $data['ket']= $this->input->post('ket',true);
+		// $this->db->insert('guru',$data);
 
-		$this->db->where('id',$id)->delete('guru');
+		$this->db->where('NIP',$id)->delete('guru');
 
 		redirect('admin/lihatdata/guru');
 	}
@@ -229,11 +229,11 @@ class Lihatdata extends CI_Controller
 
 	public function updatemapel($kode_mapel)
 	{
-		$data['kode_mapel'] = $this->input->post('kode_mapel',true);
+		// $data['kode_mapel'] = $this->input->post('kode_mapel',true);
 		$data['nama_mapel'] = $this->input->post('nama_mapel',true);
 		$nama = $this->input->post('nama_mapel',true);
 
-		$this->db->where('kode_mapel',$kode_mapel)->update('mapel',$data);
+		$this->db->where('id',$kode_mapel)->update('mapel',$data);
 
 		$this->session->set_flashdata('berhasil','Mata pelajaran '.$nama.' berhasil di update');
 		redirect('admin/lihatdata/editmapel/'.$kode_mapel);
@@ -241,7 +241,7 @@ class Lihatdata extends CI_Controller
 
 	public function destroymapel($kode_mapel)
 	{
-		$this->db->where('kode_mapel',$kode_mapel)->delete('mapel');
+		$this->db->where('id',$kode_mapel)->delete('mapel');
 
 		redirect('admin/lihatdata/mapel');
 	}
@@ -266,7 +266,7 @@ class Lihatdata extends CI_Controller
 
 	public function wali()
 	{
-		$data['wali'] = $this->db->select('wali_kelas.*, siswa.nama as namasiswa')->from('wali_kelas')->join('siswa','siswa.nik = wali_kelas.nik')->get()->result();
+		$data['wali'] = $this->db->select('wali_kelas.*,guru.nama as nama, ruang_kelas.nama_ruangan')->from('wali_kelas')->join("guru", "guru.NIP=wali_kelas.id_guru")->join("ruang_kelas", "ruang_kelas.id=wali_kelas.id_kelas")->get()->result();
 
 		$this->load->view('admin/lihatdata/wali/index',$data);
 	}
@@ -318,7 +318,7 @@ class Lihatdata extends CI_Controller
 
 	public function lihatwalikelas()
 	{
-		$data['wali'] = $this->db->select('wali_kelas.*,guru.nama,ruang_kelas.nama_ruangan')->from('wali_kelas')->join('guru','guru.id=wali_kelas.id_guru','INNER')->join('ruang_kelas','ruang_kelas.id=wali_kelas.id_kelas','INNER')->get()->result();
+		$data['wali'] = $this->db->select('wali_kelas.*,guru.nama,ruang_kelas.nama_ruangan')->from('wali_kelas')->join('guru','guru.NIP=wali_kelas.id_guru','INNER')->join('ruang_kelas','ruang_kelas.id=wali_kelas.id_kelas','INNER')->get()->result();
 
 		$this->load->view('admin/lihatdata/wali/index',$data);
 	}
