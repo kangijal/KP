@@ -42,7 +42,7 @@
               <thead>
                 <tr>
                   <th>Mata Pelajaran</th>
-                  <th>Semester</th>
+                  <!-- <th>Semester</th> -->
                   <!-- <th>Tahun Ajaran</th> -->
                   <!-- <th>Tugas</th> -->
                   <th>UTS</th>
@@ -54,7 +54,7 @@
                 <?php foreach($nilai as $nilai) : ?>
                   <tr>
                     <td><?= $nilai->nama_mapel;?></td>
-                    <td><?= $nilai->semester;?></td>
+                    <!-- <td><?= $nilai->semester;?></td> -->
                     <!-- <td><?= $nilai->thn_ajaran;?></td> -->
                     <!-- <td><?= $nilai->tugas;?></td> -->
                     <td><?= $nilai->uts;?></td>
@@ -63,17 +63,17 @@
                   </tr>
                 <?php endforeach;?>
               </tbody>
-              <tfoot>
+              <!-- <tfoot>
                 <tr>
                   <th>Mata Pelajaran</th>
                   <th>Semester</th>
                   <!-- <th>Tahun Ajaran</th> -->
                   <!-- <th>Tugas</th> -->
-                  <th>UTS</th>
-                  <th>UAS</th>
+                  <!-- <th>UTS</th>
+                  <th>UAS</th> -->
                   <!-- <th>Nilai Rata</th> -->
                 </tr>
-              </tfoot>
+              </tfoot> -->
             </table>
         <div class="control-sidebar-bg"></div>
     </div> <!-- panel-body -->

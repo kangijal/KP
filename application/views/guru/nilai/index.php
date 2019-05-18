@@ -46,7 +46,7 @@
               <th>Nama Siswa</th>
               <th>Kelas</th>
               <th>Mata Pelajaran</th>
-              <th>Semester</th>
+              <!-- <th>Semester</th> -->
               <th>UTS</th>
               <th>UAS</th>
               <th>Action</th>
@@ -61,7 +61,7 @@
                     <td><?= $siswa[$i]["nama"] ?></td>
                     <td><?= $siswa[$i]["nama_ruangan"] ?></td>
                     <td><?= $mapel[$j]["nama_mapel"] ?></td>
-                    <td><?= $siswa[$i]["semester"] ?></td>
+                    <!-- <td><?= $siswa[$i]["semester"] ?></td> -->
                     <td><input type="number" name="uts[]" class="form-control"></td>
                     <td><input type="number" name="uas[]" class="form-control"></td>
                   </tr>

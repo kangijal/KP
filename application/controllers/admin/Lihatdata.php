@@ -179,7 +179,7 @@ class Lihatdata extends CI_Controller
 	public function updatekelas($id)
 	{
 
-		$data['nama_ruangan'] = $this->input->post('nama1',true);
+		$data['nama_ruangan'] = $this->input->post('nama1',true)." ".$this->input->post('nama2',true);
 		$data['jumlah_siswa'] = $this->input->post('jumlah_siswa',true);
 
 		$this->db->where('id',$id)->update('ruang_kelas',$data);

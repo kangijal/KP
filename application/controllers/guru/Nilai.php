@@ -165,8 +165,9 @@ class Nilai extends CI_Controller
 
 				$this->db->insert("nilai_siswa",
                     array(
+                        "nis" => $nis[$i],
                         "id_kelas" => $kelas["0"],
-                        "id_mapel" => $mapel["0"],
+                        "id_mapel" => $mapel[$i],
                         "semester" => $semester["0"],
                         "uts" => $nilai_uts,
                         "uas" => $nilai_uas,
@@ -189,6 +190,7 @@ class Nilai extends CI_Controller
 
 				$this->db->insert("nilai_siswa",
                     array(
+                        "nis" => $nis[$i],
                         "id_kelas" => $kelas[$i],
                         "id_mapel" => $mapel[$i],
                         "semester" => $semester[$i],
@@ -200,12 +202,11 @@ class Nilai extends CI_Controller
 		}
 
 		if ($this->db->trans_status() === TRUE) {
-            $this->db->trans_commit();
+			$this->db->trans_commit();
         }
         else {
-            $this->db->trans_commit();
+			$this->db->trans_commit();
         }
-
 		redirect(base_url()."guru/nilai");
 
 		//aksi tambah jika di form > di db
