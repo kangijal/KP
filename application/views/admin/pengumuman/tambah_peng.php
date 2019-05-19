@@ -61,7 +61,7 @@
           <div class="form-group ">
             <label for="tgl_lahir" class="col-sm-2 control-label">Tanggal Pengumuman</label>
             <div class="col-sm-6">
-              <input type="date"  name="tgl" class="form-control" id="tgl" placeholder="" required="">
+              <input type="text"  name="tgl" class="form-control" id="ddtt" placeholder="" required="">
             </div>
           </div>
 

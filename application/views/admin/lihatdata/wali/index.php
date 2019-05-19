@@ -88,19 +88,14 @@
                                             <?php endforeach; ?>
                                         </tbody>
                                     </table>
-
                                 </div> <!-- panel-body -->
                             </div> <!-- panel -->
                         </div> <!-- col -->
-                    </div> <!-- End row -->
-                    <!-- end row -->
-
+                    </div> 
                 </div> <!-- container -->
 
-            </div> <!-- content -->
-
+            </div>
             <footer class="footer text-right">
-                2015 © Moltran.
             </footer>
 
         </div>
@@ -128,20 +123,7 @@
 
 <div style="display: none" id="urledit" url="<?php echo site_url('admin/lihatdata/editsiswa/');?>"></div>
 
-<!-- ============================================================== -->
-<!-- End Right content here -->
-<!-- ============================================================== -->
-
-
-<!-- Right Sidebar -->
-
-<!-- /Right-bar -->
-
 </div>
-<!-- END wrapper -->
-
-
-
 <?php $this->load->view('admin/layouts/footer'); ?>
 
 <script>

@@ -36,7 +36,7 @@
         <div class="panel-heading"><h3 class="panel-title">Nilai Semester Ganjil</h3></div>
         <div class="panel-body" align="center">
 
-          <a target="_blank" class="btn btn-success" href="<?=site_url('user/nilai/cetak');?>">Cetak</a>
+          <!-- <a target="_blank" class="btn btn-success" href="<?=site_url('user/nilai/cetak');?>">Cetak</a> -->
 
             <table class="datatables table table-striped">
               <thead>
@@ -67,11 +67,11 @@
                 <tr>
                   <th>Mata Pelajaran</th>
                   <th>Semester</th>
-                  <!-- <th>Tahun Ajaran</th> -->
+                   <th>Tahun Ajaran</th> -->
                   <!-- <th>Tugas</th> -->
                   <!-- <th>UTS</th>
                   <th>UAS</th> -->
-                  <!-- <th>Nilai Rata</th> -->
+                  <!-- <th>Nilai Rata</th> 
                 </tr>
               </tfoot> -->
             </table>

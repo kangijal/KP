@@ -55,7 +55,7 @@
                                 <div class="panel-heading"><h3 class="panel-title">Data Tugas</h3></div>
                                 <div class="panel-body">
                                     <!-- Isi COntent ====================== -->
-                                    <a href="<?=site_url('user/lihatdata/cetakmapel');?>" class="btn btn-success" style="width: 20%; margin-bottom: 20px" target="_blank">CETAK</a>
+                                    <!-- <a href="<?=site_url('user/lihatdata/cetakmapel');?>" class="btn btn-success" style="width: 20%; margin-bottom: 20px" target="_blank">CETAK</a> -->
                                     <table class="table table-bordered" id="tabeldata">
                                         <thead>
                                             <tr>
@@ -64,7 +64,12 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            
+                                        <?php foreach($tugas as $tugas) : ?>
+                                            <tr>
+                                                <td><?= $tugas->photo;?></td>
+                                                <td><?= $tugas->deskripsi;?></td>
+                                            </tr>
+                                        <?php endforeach;?>
                                         </tbody>
                                     </table>
 

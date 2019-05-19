@@ -144,18 +144,11 @@
                                         </tbody>
                                     </table>    
                                   </div> <!-- panel -->
-                        </div> <!-- col -->
-                    </div> <!-- End row -->
-                    <!-- end row -->
-
-                </div> <!-- container -->
-
-            </div> <!-- content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    
-    
-  <!-- Add the sidebar's background. This div must be placed
-  immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->

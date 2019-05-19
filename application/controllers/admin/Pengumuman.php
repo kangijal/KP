@@ -61,7 +61,6 @@ public function tampil_peng(){
 		    $this->image_lib->resize(); 
 	        $upload = array('upload_data' => $this->upload->data());
 	        $tgl=$this->input->post('tgl');
-	        $tgl= date('Y-m-d', strtotime($tgl));
 			$file=$this->upload->data();
 			$data=array(
 				'judul'=>$this->input->post('judul'),
@@ -98,7 +97,7 @@ public function tampil_peng(){
 	
     public function edit_aksi_peng(){
     	$id=$this->input->post('id_pengumuman');
-    	$tgl=$this->input->post('tgl');
+    	$tgl=$this->input->post('tanggal');
 	        $tgl= date('Y-m-d', strtotime($tgl));
     	if (basename($_FILES["foto"]["name"])!=null) {
 		    $config['upload_path']          = './assets/img/upload/';
