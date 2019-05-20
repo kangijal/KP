@@ -69,7 +69,7 @@
                                                         <td><?= $sw->nis; ?>
                                                         </td>
                                                         <td><?= $sw->nama; ?></td>
-                                                        <td><?= $sw->id_kelas; ?></td>
+                                                        <td><?= $sw->kelas; ?></td>
                                                         <td><?= $sw->jk; ?></td>
                                                         <td><?= $sw->th_masuk; ?></td>
                                                         <td><?= $sw->ttl; ?></td>

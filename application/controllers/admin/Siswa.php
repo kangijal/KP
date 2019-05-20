@@ -50,6 +50,7 @@ class Siswa extends CI_Controller
 		$data['nope'] = $this->input->post('nope',true);
 		$ttl1 = $this->input->post('ttl1',true);
 		$ttl2 = $this->input->post('ttl2',true);
+		$pass = $this->input->post('nis',true);
 		$data['ttl'] = $ttl1.' '.$ttl2;
 		$user['photo'] = $namaphoto;
 
@@ -61,13 +62,13 @@ class Siswa extends CI_Controller
 
 		$user['nama'] = $this->input->post('nama');
 		$user['username'] = $this->input->post('nis',true);
-		$user['password'] = md5($ttl2);
+		$user['password'] = md5($pass);
 		$user['level'] = 'siswa';
 
 		$this->db->insert('user',$user);
 
 		$this->session->set_flashdata('berhasil','Siswa berhasil ditambahkan');
-			redirect('admin/siswa/create');
+			redirect('admin/lihatdata/siswa');
 		}
 
 		//=================== ************************** =================================

@@ -54,7 +54,7 @@ class Inputdata extends CI_Controller
 			$data['jabatan'] = $this->input->post('jabatan',true);
 			$data['nope'] = $this->input->post('nope',true);
 			$data['jk'] = $this->input->post('jk',true);
-			
+			$pass = $this->input->post('nip',true);
 			
 			$data['alamat'] = $this->input->post('alamat',true);
 
@@ -65,7 +65,7 @@ class Inputdata extends CI_Controller
 			// $data2['id'] = $id;
 			$data2['nama'] = $this->input->post('nama',true);
 			$data2['username'] = $this->input->post('nip',true);
-			$data2['password'] = md5($ttl2);
+			$data2['password'] = md5($pass);
 			$data2['level'] = 'guru';
 			$data2['photo'] = $namaphoto;
 

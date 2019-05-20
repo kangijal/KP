@@ -2,7 +2,7 @@
                 <div class="sidebar-inner slimscrollleft">
                     <div class="user-details" align="center">
                         <div>
-                            <img src="<?php echo base_url('assets/blue/images/users/avatar-1.jpg');?>" alt="User Image" class="thumb-lg img-circle">
+                            <img src="<?php echo base_url('assets/images/guest.png');?>" alt="User Image" class="thumb-lg img-circle">
                         </div>
                         <div >
                             <h3><?=$this->session->userdata('nama');?></h3>

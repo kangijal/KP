@@ -57,7 +57,7 @@
                     <input type="text" name="nis[]" value="<?= $siswa[$i]["nis"] ?>" class="hidden">
                     <input type="text" name="kelas[]" value="<?= $siswa[$i]["id_kelas"] ?>" class="hidden">
                     <input type="text" name="mapel[]" value="<?= $mapel[$j]["id"] ?>" class="hidden">
-                    <input type="text" name="semester[]" value="<?= $siswa[$i]["semester"] ?>" class="hidden">
+                    <!-- <input type="text" name="semester[]" value="<?= $siswa[$i]["semester"] ?>" class="hidden"> -->
                     <tr>
                       <td class="text-center"><?= ($nomor+1) ?></td>
                       <td><?= $siswa[$i]["nama"] ?></td>

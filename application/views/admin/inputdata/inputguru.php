@@ -88,7 +88,7 @@
                                             <label class="col-md-2 control-label" for="example-email">Jenis Kelamain</label>
                                             <div class="col-md-10">
                                                 <input type="radio" name="jk" id="optionsRadios2" value="L"> L
-                                                <input type="radio" style="margin-left: 100px" name="jk" id="optionsRadios2" value="L"> P
+                                                <input type="radio" style="margin-left: 100px" name="jk" id="optionsRadios2" value="P"> P
                                             </div>
                                         </div>
                                         <div class="form-group">

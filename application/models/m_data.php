@@ -62,6 +62,15 @@ class M_data extends CI_Model{
         $query=$this->db->get();
         return $query->result();
     }
+
+    public function GetTugas(){
+        $this->db->select('*');
+        $this->db->from('tugas');
+        $this->db->order_by('id','DSC');
+        $query=$this->db->get();
+        return $query->result();
+    }
+
     public function GetDataKelas($id_kelas){
         $this->db->select("s.nis as nis, s.nama as nama, s.tgl_lahir as tgl_lahir, s.tempat_lahir as tmpt_lahir, s.nama_ibu as nama_ibu, k.nama_ruangan as kelas,k.tahun_ajaran as tahun_ajaran,ks.id_kelas as id_kelas");
         $this->db->from('kelas_siswa as ks');

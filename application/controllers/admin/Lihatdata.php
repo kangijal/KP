@@ -18,7 +18,7 @@ class Lihatdata extends CI_Controller
 	// Menu Siswa ============================================================
 	public function siswa()
 	{
-		$data['siswa'] = $this->db->select('siswa.*,ruang_kelas.nama_ruangan,')->from('siswa')->join('ruang_kelas','ruang_kelas.id=siswa.id_kelas')->get()->result();
+		$data['siswa'] = $this->db->select('siswa.*,ruang_kelas.nama_ruangan as kelas')->from('siswa')->join('ruang_kelas','ruang_kelas.id=siswa.id_kelas')->get()->result();
 
 		$this->load->view('admin/lihatdata/siswa/index',$data);
 	}
@@ -115,7 +115,7 @@ class Lihatdata extends CI_Controller
 		// $data['ttl'] = $this->input->post('ttl',true);
 		// $data['jabatan'] = $this->input->post('jabatan',true);
 		// $data['nope'] = $this->input->post('nope',true);
-		// $data['jk'] = $this->input->post('jk',true);
+		$data['jk'] = $this->input->post('jk',true);
 		// $data['agama'] = $this->input->post('agama',true);
 		// $data['alamat'] = $this->input->post('alamat',true);
 		// $nama = $this->input->post('nama',true);
@@ -123,7 +123,7 @@ class Lihatdata extends CI_Controller
 		$this->db->where('NIP',$id)->update('guru',$data);
 
 		$this->session->set_flashdata('berhasil','Guru dengan nama '.$nama.' berhasil di Update');
-		redirect('admin/lihatdata/editguru/'.$id);
+		redirect('admin/lihatdata/guru/'.$id);
 	}
 
 	public function destroyguru($id)

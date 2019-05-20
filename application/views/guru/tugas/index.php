@@ -56,7 +56,7 @@
 
                                 <div class="panel-heading"><h3 class="panel-title">Tugas</h3></div>
                                 <div class="panel-body">
-                                    <form action="<?php echo site_url('guru/pengumuman/tambah');?>" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">                                    
+                                    <form action="<?php echo site_url('guru/tugas/tambah');?>" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">                                    
                                         
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Deskripsi</label>

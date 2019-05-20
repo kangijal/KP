@@ -69,11 +69,21 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label class="col-md-2 control-label" for="example-email">Jenis Kelamin</label>
+                                        <div class="col-md-10">
+                                            <input type="radio" name="jk" id="optionsRadios2" value="L"> L
+                                            <input style="margin-left: 100px" type="radio" name="jk" id="optionsRadios2" value="P"> P
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label class="col-md-2 control-label">Alamat</label>
                                         <div class="col-md-10">
                                             <textarea name="alamat" class="form-control" rows="5"><?= $guru->alamat;?></textarea>
                                         </div>
                                     </div>
+
+
                                     <div class="form-group m-b-0">
                                         <div class="col-sm-offset-2 col-sm-9">
                                           <button type="submit" class="btn btn-info waves-effect waves-light">Update</button>

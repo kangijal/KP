@@ -2,7 +2,7 @@
                 <div class="sidebar-inner slimscrollleft">
                     <div class="user-details" align="center">
                         <div>
-                            <img src="<?php echo base_url('assets/blue/images/users/avatar-1.jpg');?>" alt="User Image" class="thumb-lg img-circle">
+                            <img src="<?php echo base_url('assets/images/guest.png');?>" alt="User Image" class="thumb-lg img-circle">
                         </div>
                         <div >
                             <h3><?=$this->session->userdata('nama');?></h3>
@@ -24,7 +24,11 @@
                                 <a href="<?= site_url('guru/profil');?>" class="waves-effect"><i class="fa fa-book"></i> <span>Profil</span></a>
                             </li>
 
-                            <li class="has_sub">
+                            <li>
+                                <a href="<?= site_url('guru/nilai');?>" class="waves-effect"><i class="fa fa-pie-chart"></i> <span>Nilai</span></a>
+                            </li>
+
+                            <!-- <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="fa fa-pie-chart"></i>
                                 <span>Nilai</span>
                                 <span class="pull-right"><i class="md md-add"></i></span>
@@ -33,7 +37,7 @@
                                   <li><a href="<?php echo site_url('guru/nilai');?>"></i> Input Nilai</a></li>
                                   <li><a href="<?php echo site_url('guru/nilai/lihat_nilai');?>"></i> Lihat Nilai</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
 
                             <li>
                                 <a href="<?php echo site_url('guru/jadwal');?>" class="waves-effect"><i class="fa fa-th"></i> <span>Jadwal Pelajaran</span></a>
