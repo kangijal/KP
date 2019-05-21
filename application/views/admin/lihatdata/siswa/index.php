@@ -42,9 +42,28 @@
                                 <div class="panel-heading"><h3 class="panel-title">Data Siswa</h3></div>
                                 <div class="panel-body">
                                     <!-- Isi COntent ====================== -->
+                                    
 
                                         <a href="<?php echo site_url('admin/siswa/create');?>" class="btn btn-info" style=" margin-bottom: 20px;">TAMBAH DATA</a>
                                         <a href="<?=site_url('admin/lihatdata/cetaksiswa');?>" class="btn btn-success" style=" margin-bottom: 20px;">CETAK</a>
+
+                                        <form action="<?= site_url('admin/lihatdata/siswa');?>" method="POST" id="formkelas" class="form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Kelas</label>
+                                            <div class="col-sm-7">
+                                                <select name="kelas" class="form-control">
+                                                    <option></option>
+                                                    <?php foreach($kelas as $ks) : ?>
+                                                        <option value="<?= $ks->id;?>"><?= $ks->nama_ruangan;?></option>
+                                                    <?php endforeach;?>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <button type="submit" class="btn btn-info waves-effect waves-light">Cari</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
                                         <table class="datatables table table-bordered table-striped">
                                             <thead>
                                                 <tr>

@@ -32,8 +32,7 @@
 
 
                 <div class="panel-body">
-                <?php echo form_open('auth/cek_login') ?>
-                    <form class="form-horizontal m-t-20" >
+                    <form class="form-horizontal" action="<?= site_url('auth/cek_login');?>" method="POST" >
 
                         <div class="form-group ">
                             <div class="col-xs-12">
@@ -54,22 +53,14 @@
                                 <label for="checkbox-signup">
                                     Tampilkan Password
                                 </label>
-                            </div>
-                            
+                            </div>                            
                         </div>
-                    </div>
-
 
                         <div class="form-group text-center m-t-40">
                             <div class="col-xs-12">
                                 <button class="btn btn-primary btn-lg w-lg waves-effect waves-light" name="submit" type="submit" value=Submit>Log In</button>
                             </div>
-                        </div>
-
-                        <div class="form-group m-t-30">
-                           
-                            </div>
-                        </div>
+                        </div>                        
                     </form> 
                 </div>                                 
                 

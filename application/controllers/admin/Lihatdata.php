@@ -18,7 +18,11 @@ class Lihatdata extends CI_Controller
 	// Menu Siswa ============================================================
 	public function siswa()
 	{
-		$data['siswa'] = $this->db->select('siswa.*,ruang_kelas.nama_ruangan as kelas')->from('siswa')->join('ruang_kelas','ruang_kelas.id=siswa.id_kelas')->get()->result();
+		$data['kelas'] = $this->db->get('ruang_kelas')->result();
+
+		$kelas = $this->input->post('kelas',true);
+
+		$data['siswa'] = $this->db->select('siswa.*,ruang_kelas.nama_ruangan as kelas')->from('siswa')->join('ruang_kelas','ruang_kelas.id=siswa.id_kelas')->where('siswa.id_kelas', $kelas)->get()->result();
 
 		$this->load->view('admin/lihatdata/siswa/index',$data);
 	}

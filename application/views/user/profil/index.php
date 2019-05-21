@@ -50,7 +50,7 @@
                 <div class="form-group">
                     <label class="col-md-3 control-label">TTL</label>
                       <div class="col-md-6">
-                    <input disabled type="text" class="form-control" value="<?= $profil->ttl;?>">
+                    <input type="text" class="form-control" value="<?= $profil->ttl;?>">
                   </div>
                 </div>
 

@@ -15,10 +15,14 @@ class Nilai extends CI_Controller
 
 		$kelas = $this->db->select('wali_kelas.id_kelas, ruang_kelas.nama_ruangan, ruang_kelas.id as id_kelas')->from('wali_kelas')->join('ruang_kelas','ruang_kelas.id=wali_kelas.id_kelas')->where('wali_kelas.id_guru',$nip)->get()->row();
 		$kelas_guru = $kelas->id_kelas;
-		$data['siswa'] = $this->db->select('*')->from('siswa')->where('id_kelas',$kelas_guru)->get()->result();
-		$data['mapel'] = $this->db->from('mapel')->get()->result_array();
 
-		$data['nilai'] = $this->db->select('*')->from('nilai_siswa')->where('id_kelas',$kelas_guru)->get()->result_array();
+		$data['matapelajaran'] = $this->db->get('mapel')->result();
+		$matapelajaran = $this->input->post('matapelajaran',true);
+
+		$data['siswa'] = $this->db->select('*')->from('siswa')->where('id_kelas',$kelas_guru)->get()->result();
+		$data['mapel'] = $this->db->from('mapel')->where('id',$matapelajaran)->get()->result_array();
+
+		$data['nilai'] = $this->db->select('*')->from('nilai_siswa')->where('id_kelas',$kelas_guru)->where('id_mapel',$matapelajaran)->get()->result_array();
 	
 		$data['siswa'] = $this->db->select('siswa.*, ruang_kelas.nama_ruangan')
 		->join("ruang_kelas", "ruang_kelas.id=siswa.id_kelas")
@@ -134,15 +138,21 @@ class Nilai extends CI_Controller
 
 	public function ratih()
 	{
+		$matapelajaran = $this->input->post('matapelajaran',true);
+
 		$nis 		= $this->input->post("nis[]");
 		$kelas 		= $this->input->post("kelas[]");
 		$mapel 		= $this->input->post("mapel[]");
-		$semester 	= $this->input->post("semester[]");
+		// $semester 	= $this->input->post("semester[]");
 		$uts 		= $this->input->post("uts[]");
 		$uas 		= $this->input->post("uas[]");
+		$uts2 		= $this->input->post("uts2[]");
+		$uas2 		= $this->input->post("uas2[]");
 
+		//print_r($uts2); exit;
         $nilai = $this->db->select("*")->from("nilai_siswa")
-        ->where("id_kelas", $kelas["0"])
+		//->where("id_mapel", $matapelajaran)
+		->where("id_kelas", $kelas["0"])
         ->order_by("id", "ASC")
 		->get()->result_array();
 
@@ -162,15 +172,28 @@ class Nilai extends CI_Controller
 				} else {
 					$nilai_uas = "0";
 				}
+				if (!empty($uts2[$i])) {
+					$nilai_uts2 = $uts2[$i];
+				} else {
+					$nilai_uts2 = "0";
+				}
+
+				if (!empty($uas2[$i])) {
+					$nilai_uas2 = $uas2[$i];
+				} else {
+					$nilai_uas2 = "0";
+				}
 
 				$this->db->insert("nilai_siswa",
                     array(
                         "nis" => $nis[$i],
                         "id_kelas" => $kelas["0"],
                         "id_mapel" => $mapel[$i],
-                        "semester" => $semester["0"],
+                        // "semester" => $semester["0"],
                         "uts" => $nilai_uts,
-                        "uas" => $nilai_uas,
+							"uas" => $nilai_uas,
+						"uts2" => $nilai_uts2,
+                        "uas2" => $nilai_uas2,
                     )
                 );
 			}
@@ -187,15 +210,28 @@ class Nilai extends CI_Controller
 				} else {
 					$nilai_uas = "0";
 				}
+				if (!empty($uts2[$i])) {
+					$nilai_uts2 = $uts2[$i];
+				} else {
+					$nilai_uts2 = "0";
+				}
+
+				if (!empty($uas2[$i])) {
+					$nilai_uas2 = $uas2[$i];
+				} else {
+					$nilai_uas2 = "0";
+				}
 
 				$this->db->insert("nilai_siswa",
                     array(
                         "nis" => $nis[$i],
                         "id_kelas" => $kelas[$i],
                         "id_mapel" => $mapel[$i],
-                        "semester" => $semester[$i],
+                        // "semester" => $semester[$i],
                         "uts" => $nilai_uts,
-                        "uas" => $nilai_uas,
+						"uas" => $nilai_uas,
+						"uts2" => $nilai_uts2,
+                        "uas2" => $nilai_uas2,
                     )
                 );
 			}

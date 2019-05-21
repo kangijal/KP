@@ -63,7 +63,7 @@ class M_data extends CI_Model{
         return $query->result();
     }
 
-    public function GetTugas(){
+    public function GetTugas(){ 
         $this->db->select('*');
         $this->db->from('tugas');
         $this->db->order_by('id','DSC');

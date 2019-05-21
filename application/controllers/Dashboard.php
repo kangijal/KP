@@ -7,16 +7,16 @@ class Dashboard extends CI_Controller {
     {
         parent::__construct();
         $this->load->helper('url');
-        $this->load->model('m_data');
+        $this->load->model('M_data');
        
     }
     function index()
     {
         
-        $data['pengumuman']=$this->m_data->GetPengumuman();
-        $data['guru']=$this->m_data->Getjumlahguru();
-        $data['siswa']=$this->m_data->Getjumlahsiswa();
-        $data['ruang']=$this->m_data->Getjumlahruang();
+        $data['pengumuman']=$this->M_data->GetPengumuman();
+        $data['guru']=$this->M_data->Getjumlahguru();
+        $data['siswa']=$this->M_data->Getjumlahsiswa();
+        $data['ruang']=$this->M_data->Getjumlahruang();
          
     	$this->load->view('dasboard/header');
         $this->load->view('dasboard/home',$data);
@@ -24,7 +24,7 @@ class Dashboard extends CI_Controller {
     }
 
     function tampil_beritadetail($id){
-        $ks = $this->m_data->GetWhere('berita', array('id_berita' => $id));
+        $ks = $this->M_data->GetWhere('berita', array('id_berita' => $id));
         $data = array(
             'id_berita' => $ks[0]['id_berita'],
             'judul' => $ks[0]['judul'],
@@ -37,7 +37,7 @@ class Dashboard extends CI_Controller {
         $this->load->view('dasboard/footer');
     }
     function tampil_pengdetail($id){
-        $ks = $this->m_data->GetWhere('pengumuman', array('id_pengumuman' => $id));
+        $ks = $this->M_data->GetWhere('pengumuman', array('id_pengumuman' => $id));
         $data = array(
             'id_pengumuman' => $ks[0]['id_pengumuman'],
             'judul' => $ks[0]['judul'],
