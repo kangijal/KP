@@ -45,8 +45,10 @@
                   <!-- <th>Semester</th> -->
                   <!-- <th>Tahun Ajaran</th> -->
                   <!-- <th>Tugas</th> -->
-                  <th>UTS</th>
-                  <th>UAS</th>
+                  <th>UTS ganjil</th>
+                  <th>UAS ganjil</th>
+                  <th>UTS genap</th>
+                  <th>UAS genap</th>
                   <!-- <th>Nilai Rata</th> -->
                 </tr>
               </thead>
@@ -59,6 +61,8 @@
                     <!-- <td><?= $nilai->tugas;?></td> -->
                     <td><?= $nilai->uts;?></td>
                     <td><?= $nilai->uas;?></td>
+                    <td><?= $nilai->uts2;?></td>
+                    <td><?= $nilai->uas2;?></td>
                     <!-- <td><?= $nilai->rata;?></td> -->
                   </tr>
                 <?php endforeach;?>

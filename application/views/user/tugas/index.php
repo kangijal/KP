@@ -66,7 +66,8 @@
                                         <tbody>
                                         <?php foreach($tugas as $tugas) : ?>
                                             <tr>
-                                                <td><?= $tugas->photo;?></td>
+                                                <td>
+                                                <img class="img-responsive img-square " src="<?php echo base_url('assets/img/upload/'.$tugas->photo);?>" alt=""></td>
                                                 <td><?= $tugas->deskripsi;?></td>
                                             </tr>
                                         <?php endforeach;?>
