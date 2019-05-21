@@ -123,7 +123,6 @@ class Inputdata extends CI_Controller
 	{
 		$data['guru'] = $this->db->get('guru')->result();
 		$data['kelas'] = $this->db->get('ruang_kelas')->result();
-		$data['thn_ajaran'] = $this->input->post('thn_ajaran',true);
 
 		$this->load->view('admin/inputdata/inputwalikelas',$data);
 	}
@@ -133,6 +132,7 @@ class Inputdata extends CI_Controller
 		
 		$data['id_guru'] = $this->input->post('id_nip',true);
 		$data['id_kelas'] = $this->input->post('id_kelas',true);
+		$data['thn_ajaran'] = $this->input->post('thn_ajaran',true);
 
 		$this->db->insert('wali_kelas',$data);
 

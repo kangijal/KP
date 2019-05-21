@@ -158,7 +158,7 @@ class Nilai extends CI_Controller
 
 		$this->db->trans_begin();
 		if (count($nilai) > 0) {
-			$this->db->where("id_kelas", $kelas["0"])->delete("nilai_siswa");
+			$this->db->where("id_kelas", $kelas["0"])->where('id_mapel',$mapel[$i])->delete("nilai_siswa");
 
 			for ($i=0; $i<count($nis); $i++) {
 				if (!empty($uts[$i])) {
@@ -172,6 +172,7 @@ class Nilai extends CI_Controller
 				} else {
 					$nilai_uas = "0";
 				}
+
 				if (!empty($uts2[$i])) {
 					$nilai_uts2 = $uts2[$i];
 				} else {
@@ -191,7 +192,7 @@ class Nilai extends CI_Controller
                         "id_mapel" => $mapel[$i],
                         // "semester" => $semester["0"],
                         "uts" => $nilai_uts,
-							"uas" => $nilai_uas,
+						"uas" => $nilai_uas,
 						"uts2" => $nilai_uts2,
                         "uas2" => $nilai_uas2,
                     )

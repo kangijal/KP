@@ -94,7 +94,7 @@
               </tr>
             </thead>
             <tbody><?php
-                $nomor = 0; //print_r($siswa); exit;
+                $nomor = 0;
                 for ($i=0; $i<count($siswa); $i++) { 
                   for ($j=0; $j<count($mapel); $j++) { ?>
                     <input type="text" name="nis[]" value="<?= $siswa[$i]["nis"] ?>" class="hidden">
@@ -104,13 +104,13 @@
                     <tr>
                       <td class="text-center"><?= ($nomor+1) ?></td>
                       <td><?= $siswa[$i]["nama"] ?></td>
-                      <td><?= $siswa[$i]["nama_ruangan"]." - ".$nilai[$j]["uts2"] ?></td>
+                      <td><?= $siswa[$i]["nama_ruangan"] ?></td>
                       <td><?= $mapel[$j]["nama_mapel"] ?></td>
                       <!-- <td class="text-center"><?= $siswa[$i]["semester"] ?></td> -->
-                      <td><input type="number" name="uts[]" class="form-control" value="<?= !empty($nilai[$i]["uts"]) ? $nilai[$nomor]["uts"] : "0" ?>"></td>
-                      <td><input type="number" name="uas[]" class="form-control" value="<?= !empty($nilai[$i]["uas"]) ? $nilai[$nomor]["uas"] : "0" ?>"></td>
-                      <td><input type="number" name="uts2[]" class="form-control" value="<?= !empty($nilai[$i]["uts2"]) ? $nilai[$nomor]["uts2"] : "0" ?>"></td>
-                      <td><input type="number" name="uas2[]" class="form-control" value="<?= !empty($nilai[$i]["uas2"]) ? $nilai[$nomor]["uas2"] : "0" ?>"></td>
+                      <td><input type="number" name="uts[]" class="form-control" value="<?= !empty($nilai[$nomor]["uts"]) ? $nilai[$nomor]["uts"] : "0" ?>"></td>
+                      <td><input type="number" name="uas[]" class="form-control" value="<?= !empty($nilai[$nomor]["uas"]) ? $nilai[$nomor]["uas"] : "0" ?>"></td>
+                      <td><input type="number" name="uts2[]" class="form-control" value="<?= !empty($nilai[$nomor]["uts2"]) ? $nilai[$nomor]["uts2"] : "0" ?>"></td>
+                      <td><input type="number" name="uas2[]" class="form-control" value="<?= !empty($nilai[$nomor]["uas2"]) ? $nilai[$nomor]["uas2"] : "0" ?>"></td>
                     </tr>
                   <?php $nomor++; }
                   } ?>

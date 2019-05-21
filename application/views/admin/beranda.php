@@ -1,3 +1,12 @@
+<?php
+if($this->session->userdata("username")){
+
+}else {
+	redirect(site_url('./'));
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
