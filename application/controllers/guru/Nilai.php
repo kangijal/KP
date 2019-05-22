@@ -158,7 +158,7 @@ class Nilai extends CI_Controller
 
 		$this->db->trans_begin();
 		if (count($nilai) > 0) {
-			$this->db->where("id_kelas", $kelas["0"])->where('id_mapel',$mapel[$i])->delete("nilai_siswa");
+			$this->db->where("id_kelas", $kelas["0"])->where('id_mapel',$mapel["0"])->delete("nilai_siswa");
 
 			for ($i=0; $i<count($nis); $i++) {
 				if (!empty($uts[$i])) {
