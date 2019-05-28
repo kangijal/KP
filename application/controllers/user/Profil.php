@@ -24,6 +24,7 @@ class Profil extends CI_Controller
 	{
 		$data['alamat'] = $this->input->post('alamat',true);
 		$data['nope'] = $this->input->post('nope',true);
+		// $data['ttl'] = $this->input->post('ttl',true);
 
 		$this->db->where('nis',$nis)->update('siswa',$data);
 

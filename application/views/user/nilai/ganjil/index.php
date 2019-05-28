@@ -16,6 +16,30 @@
             <div class="content">
                 <div class="container">
                     <div class="row">
+                    <div class="col-sm-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><h3 class="panel-title"></h3></div>
+                                <div class="panel-body">
+                                   
+                                    <form action="<?= site_url('user/nilai/semesterganjil');?>" method="POST" id="formkelas" class="form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Kelas</label>
+                                            <div class="col-sm-7">
+                                                <select name="kelas" class="form-control">
+                                                    <option></option>
+                                                    <?php foreach($kelas as $ks) : ?>
+                                                        <option value="<?= $ks->id;?>"><?= $ks->nama_ruangan;?></option>
+                                                    <?php endforeach;?>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <button type="submit" class="btn btn-info waves-effect waves-light">Cari</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div> <!-- panel-body -->
+                            </div> <!-- panel -->
+                        </div>
                         <div class="col-sm-12">
                             <div class="panel panel-default">
 
@@ -33,7 +57,7 @@
         <?php }
 
         ?>
-        <div class="panel-heading"><h3 class="panel-title">Nilai Semester Ganjil</h3></div>
+        <div class="panel-heading"><h3 class="panel-title">Nilai</h3></div>
         <div class="panel-body" align="center">
 
           <!-- <a target="_blank" class="btn btn-success" href="<?=site_url('user/nilai/cetak');?>">Cetak</a> -->
@@ -44,7 +68,7 @@
                   <th>Mata Pelajaran</th>
                   <!-- <th>Semester</th> -->
                   <!-- <th>Tahun Ajaran</th> -->
-                  <!-- <th>Tugas</th> -->
+                  <th>Kelas</th>
                   <th>UTS ganjil</th>
                   <th>UAS ganjil</th>
                   <th>UTS genap</th>
@@ -58,7 +82,7 @@
                     <td><?= $nilai->nama_mapel;?></td>
                     <!-- <td><?= $nilai->semester;?></td> -->
                     <!-- <td><?= $nilai->thn_ajaran;?></td> -->
-                    <!-- <td><?= $nilai->tugas;?></td> -->
+                    <td><?= $nilai->nama_ruangan;?></td>
                     <td><?= $nilai->uts;?></td>
                     <td><?= $nilai->uas;?></td>
                     <td><?= $nilai->uts2;?></td>

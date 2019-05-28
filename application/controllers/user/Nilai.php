@@ -9,16 +9,16 @@ class Nilai extends CI_Controller
 		
 	}
 
-	public function index()
-	{
-
-	}
-
 	public function semesterganjil()
 	{
 		$nik_siswa = $this->session->userdata('username');
 
-		$data['nilai'] = $this->db->select('nilai_siswa.*,mapel.nama_mapel')->from('nilai_siswa')->join('mapel','mapel.id=nilai_siswa.id_mapel')->like('nilai_siswa.nis',$nik_siswa)->get()->result();
+		$data['kelas'] = $this->db->distinct();
+		$data['kelas'] = $this->db->select('ruang_kelas.id as id, ruang_kelas.nama_ruangan as nama_ruangan')->from('nilai_siswa')->join('ruang_kelas','ruang_kelas.id=nilai_siswa.id_kelas')->where('nilai_siswa.nis',$nik_siswa)->get()->result();
+		
+		$kelas = $this->input->post('kelas',true);
+
+		$data['nilai'] = $this->db->select('nilai_siswa.*,mapel.nama_mapel, ruang_kelas.nama_ruangan as nama_ruangan')->from('nilai_siswa')->join('ruang_kelas','ruang_kelas.id=nilai_siswa.id_kelas')->join('mapel','mapel.id=nilai_siswa.id_mapel')->where('nilai_siswa.id_kelas', $kelas)->like('nilai_siswa.nis',$nik_siswa)->get()->result();
 
 		$this->load->view('user/nilai/ganjil/index',$data);
 	}

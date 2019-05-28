@@ -47,12 +47,12 @@
                   </div>
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label class="col-md-3 control-label">TTL</label>
                       <div class="col-md-6">
-                    <input type="text" class="form-control" value="<?= $profil->ttl;?>">
+                    <input type="text" name="ttl"class="form-control" value="<?= $profil->ttl;?>">
                   </div>
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <label class="col-md-3 control-label">No. Handphone</label>
